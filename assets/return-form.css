@@ -80,6 +80,13 @@ p {
   text-align: left;
   margin-top: 15px;
 }
+ 
+.none {
+  display: none;
+}
+.products-list-values {
+  display: none;
+}
 .return-form__submit:hover {
   background-color: rgba(var(--orange-color-rgb), 0.3);
 }
@@ -141,12 +148,17 @@ p {
 .product-item__checkbox:checked + .product-item__custom-checkbox::before {
   opacity: 1;
 }
-.return-form__success {
+.return-form__success,
+.return-form__error {
   font-size: 19px;
   margin: 12px 0;
   border-radius: 3px;
   padding: 2px;
   background-color: rgb(175, 232, 175);
+}
+
+.return-form__error {
+  background-color: #e36d6d;
 }
 .submitting {
   display: none;

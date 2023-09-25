@@ -7,7 +7,8 @@
       
       <return-form class="return-form__wrapper">
         
-        <div class="return-form__success"></div>
+        <div class="return-form__success none"></div>
+        <div class="return-form__error none"></div>
         <form id="ReturnForm">
           <span class="loader loader-none"></span>
           <div class="return-form__fields">
@@ -74,7 +75,8 @@
                   <h3 class="products__title">Products:</h3> 
                   <ul class="products__list">
                     <p>Select order to choose products for return!</p>
-                  </ul> 
+                  </ul>
+                  <input type="text" name="products_list" value="" class="products-list-values"/> 
                 </div>
               </order-select>
     
@@ -89,7 +91,7 @@
               <input 
                 type="text" 
                 class="return-form__products-field input-field" 
-                name="products"
+                name="products_list"
                 placeholder="Product titles..."
                 required
               />
@@ -97,7 +99,7 @@
           <button class="return-form__submit" type="submit">Submit</button>
           {% unless customer %}
             {% style %}
-    
+
               .return-form__submit {
                 grid-column: 1/3;
               }
