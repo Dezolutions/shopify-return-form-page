@@ -4,107 +4,101 @@
 <div class="page-width">
   <div class="return-form__block">
     <h1 class="return-form__title">Return Form</h1>
-    {% form 'contact', id: 'ReturnForm', class: 'return-form' %}
-      {%- if form.posted_successfully -%}
-          <h2 class="">
-            Thank you for submitting. We will contact you as soon as possible with next steps.
-          </h2>
-        {%- elsif form.errors -%}
-          <div class="">
-            <h2 class="">
-              Error
-            </h2>
-          </div>
-        {%- endif -%}
-  
-        <div class="return-form__fields">
-          <input
-            class="return-form__name-field input-field"
-            type="text"
-            name="contact[name]"
-            placeholder="Name"
-            required
-          />
-          <input
-            class="return-form__surname-field input-field"
-            type="text"
-            name="contact[surname]"
-            placeholder="Surname"
-            required
-          />
-          <input
-            class="return-form__email-field input-field"
-            type="email"
-            name="contact[email]"
-            placeholder="E-mail"
-            required
-          />
-          <input
-            class="return-form__phone-field input-field"
-            type="phone"
-            name="contact[phone]"
-            placeholder="Phone"
-            required
-          />
-          <input
-            class="return-form__reason-field input-field"
-            type="text"
-            name="contact[reason_of_return]"
-            placeholder="Why do you want to return this product?"
-            required
-          />
-          
-          {% if customer and customer.orders.size > 0 %}
-  
-            <order-select class="return-form__wrapper">
-              <div class="return-form__select-block">
-                <label for="orderSelect">Select order:</label>
-                <select 
-                  id="orderSelect" 
-                  class="return-form__select-order" 
-                  name="contact[order_number]"
-                  required
-                >
-                  <option disabled selected value> -- select an order -- </option>
-                  {% for order in customer.orders %}
-                    <option 
-                      id="{{ order.name }}" 
-                      data-url="{{ order.customer_url }}" 
-                      value="{{ order.name }}">
-                        {{ order.name }}
-                      </option>
-                  {% endfor %}
-                </select>
-              </div>
+      
+      <return-form class="return-form__wrapper">
+        
+        <div class="return-form__success"></div>
+        <form id="ReturnForm">
+          <span class="loader loader-none"></span>
+          <div class="return-form__fields">
+            <input
+              class="return-form__name-field input-field"
+              type="text"
+              name="contact[name]"
+              placeholder="Name"
+              required
+            />
+            <input
+              class="return-form__surname-field input-field"
+              type="text"
+              name="contact[surname]"
+              placeholder="Surname"
+              required
+            />
+            <input
+              class="return-form__email-field input-field"
+              type="email"
+              name="contact[email]"
+              placeholder="E-mail"
+              required
+            />
+            <input
+              class="return-form__phone-field input-field"
+              type="phone"
+              name="contact[phone]"
+              placeholder="Phone"
+              required
+            />
+            <input
+              class="return-form__reason-field input-field"
+              type="text"
+              name="contact[reason_of_return]"
+              placeholder="Why do you want to return this product?"
+              required
+            />
+            
+            {% if customer and customer.orders.size > 0 %}
     
-              <div class="return-form__products">
-                <h3 class="products__title">Products:</h3> 
-                <ul class="products__list">
-                  <p>Select order to choose products for return!</p>
-                </ul> 
-              </div>
-            </order-select>
+              <order-select class="return-form__wrapper">
+                <div class="return-form__select-block">
+                  <label for="orderSelect">Select order:</label>
+                  <select 
+                    id="orderSelect" 
+                    class="return-form__select-order" 
+                    name="contact[order_number]"
+                    required
+                  >
+                    <option disabled selected value> -- select an order -- </option>
+                    {% for order in customer.orders %}
+                      <option 
+                        id="{{ order.name }}" 
+                        data-url="{{ order.customer_url }}" 
+                        value="{{ order.name }}">
+                          {{ order.name }}
+                        </option>
+                    {% endfor %}
+                  </select>
+                </div>
+      
+                <div class="return-form__products">
+                  <h3 class="products__title">Products:</h3> 
+                  <ul class="products__list">
+                    <p>Select order to choose products for return!</p>
+                  </ul> 
+                </div>
+              </order-select>
+    
+            {% else %}
+              <input 
+                type="text" 
+                class="return-form__order-field input-field" 
+                name="contact[order_number]"
+                placeholder="Order number..."
+                required
+              />
+              <input 
+                type="text" 
+                class="return-form__products-field input-field" 
+                name="contact[order_products]"
+                placeholder="Product titles..."
+                required
+              />
+            {% endif %}
+          <button class="return-form__submit" type="submit">Submit</button>
+          </div>
   
-          {% else %}
-            <input 
-              type="text" 
-              class="return-form__order-field input-field" 
-              name="contact[order_number]"
-              placeholder="Order number..."
-              required
-            />
-            <input 
-              type="text" 
-              class="return-form__products-field input-field" 
-              name="contact[order_products]"
-              placeholder="Product titles..."
-              required
-            />
-          {% endif %}
-        <button class="return-form__submit" type="submit">Submit</button>
-        </div>
-
-    {% endform %}
+      </form>
+      </return-form>
   </div>
 </div>
 {% schema %}

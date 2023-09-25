@@ -141,7 +141,39 @@ p {
 .product-item__checkbox:checked + .product-item__custom-checkbox::before {
   opacity: 1;
 }
+.return-form__success {
+  font-size: 19px;
+  margin: 12px 0;
+  border-radius: 3px;
+  padding: 2px;
+  background-color: rgb(175, 232, 175);
+}
+.submitting {
+  display: none;
+}
 
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid var(--orange-color);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
+.loader-none {
+  display: none;
+}
 
 @media screen and (min-width: 680px) {
   .return-form__reason-field {
