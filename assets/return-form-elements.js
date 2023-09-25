@@ -49,13 +49,13 @@ if (!customElements.get('order-select')) {
               data.items.map((item, index) => {
                 const li = document.createElement('li');
                 li.innerHTML = `
-            <label class="product-item">
-              <input class="product-item__checkbox" type="checkbox" value="${item.title}" name="contact[product_${index + 1}]"/>
-              <span class="product-item__custom-checkbox"></span>
-              <div class="product-item__img-block"><img src="${item.img}"/></div>
-              <p>${item.title}</p>
-            </label>
-          `;
+                  <label class="product-item">
+                    <input class="product-item__checkbox" type="checkbox" value="${item.title}" name="products"/>
+                    <span class="product-item__custom-checkbox"></span>
+                    <div class="product-item__img-block"><img src="${item.img}"/></div>
+                    <p>${item.title}</p>
+                  </label>
+                `;
                 this.productsList.appendChild(li);
               })
             })
@@ -81,39 +81,61 @@ if (!customElements.get('return-form')) {
         this.form.addEventListener('submit', this.onSubmitHandler.bind(this));
         this.successMessage = this.querySelector('.return-form__success');
         this.loader = this.querySelector('.loader');
+        this.productItemCheckboxes = this.querySelectorAll('.product-item__checkbox');
       }
 
       onSubmitHandler(e) {
         e.preventDefault();
-        this.loader.classList.remove('loader-none')
-        const name = document.querySelector('.return-form__name-field').value;
-        this.form.querySelector('.return-form__fields').classList.add('submitting');
-        // Send the form data to the API Gateway.
-        fetch('https://bfg7yldc83.execute-api.us-east-1.amazonaws.com/new/submitdata', {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          method: 'POST',
-          body: JSON.stringify({
-            name: name
-          })
-        })
-          .then(response => response.json())
-          .then(response => {
-            console.log(response)
-            this.form.querySelectorAll('input, select, textarea').forEach((field) => {
-              field.value = '';
-            });
-            this.form.querySelector('.return-form__fields').classList.remove('submitting');
-            this.loader.classList.add('loader-none');
-            this.successMessage.innerText = response.body;
-            this.productsTitle.innerText = 'Products:';
-            this.productsList.innerHTML = 'Select order to choose products for return!';
-          })
 
-          .catch(error => {
-            console.log(error);
-          });
+        console.log(this.productItemCheckboxes)
+        let atLeastOneCheckboxChecked = false;
+
+        for (let i = 0; i < this.productItemCheckboxes.length; i++) {
+          if (this.productItemCheckboxes[i].checked) {
+            atLeastOneCheckboxChecked = true;
+            break;
+          }
+        }
+
+        
+          const formData = new FormData(this.form);
+          const formValues = {};
+
+          for (const entry of formData.entries()) {
+            formValues[entry[0]] = entry[1];
+          }
+          this.loader.classList.remove('loader-none')
+          this.form.querySelector('.return-form__fields').classList.add('submitting');
+          // Send the form data to the API Gateway.
+          fetch('https://bfg7yldc83.execute-api.us-east-1.amazonaws.com/new/submitdata', {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            method: 'POST',
+            body: JSON.stringify(formValues)
+          })
+            .then(response => response.json())
+            .then(response => {
+              console.log(response)
+              this.form.querySelectorAll('input, select, textarea').forEach((field) => {
+                field.value = '';
+              });
+              this.form.querySelector('.return-form__fields').classList.remove('submitting');
+              this.loader.classList.add('loader-none');
+              this.successMessage.innerText = response.body;
+
+              if(this.productsList && this.productsTitle) {
+                this.productsTitle.innerText = 'Products:';
+                this.productsList.innerHTML = 'Select order to choose products for return!';
+              }
+              
+            })
+
+            .catch(error => {
+              console.log(error);
+            });
+        
+
       }
     }
   )
