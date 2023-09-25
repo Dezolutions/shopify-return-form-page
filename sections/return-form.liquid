@@ -1,0 +1,94 @@
+{{ 'return-form.css' | asset_url | stylesheet_tag }}
+
+
+<div class="page-width">
+  <h1>Return Form</h1>
+  {% form 'contact', id: 'ReturnFrom' %}
+    {%- if form.posted_successfully? -%}
+        <h2 class="">
+          Thank you for submitting. We will contact you as soon as possible with next steps.
+        </h2>
+      {%- elsif form.errors -%}
+        <div class="">
+          <h2 class="">
+            Error
+          </h2>
+        </div>
+      {%- endif -%}
+
+      <div class="return-form__fields">
+        <input
+          type="text"
+          name="contact[name]"
+          placeholder="Name"
+          required
+        />
+        <input
+          type="text"
+          name="contact[surname]"
+          placeholder="Surname"
+          required
+        />
+        <input
+          type="email"
+          name="contact[email]"
+          placeholder="Email"
+          required
+        />
+        <input
+          type="phone"
+          name="contact[phone]"
+          placeholder="Phone"
+          required
+        />
+        <textarea name="reason" placeholder="Reason" rows="5" name="contact[eason_of_returning]" cols="33">   
+        </textarea>
+        {% if customer and customer.orders.size > 0 %}
+
+          <select id="orderSelect" name="contact[order_number]">
+            {% for order in customer.orders %}
+              <option 
+                selected="false" 
+                id="{{ order.name }}" 
+                data-url="{{ order.customer_url }}" 
+                value="{{ order.name }}">
+                  {{ order.name }}
+                </option>
+            {% endfor %}
+          </select>
+
+          <div class="return-form__products">
+            <h3 class="products__title"></h3> 
+            <ul class="products__list">
+            </ul> 
+        </div>
+
+        {% else %}
+          <input type="text" name="contact[order_number]" required/>
+        {% endif %}
+        
+      </div>
+
+      <button class="return-form__submit" type="submit">Submit</button>
+      
+  {% endform %}
+
+</div>
+{% schema %}
+{
+  "name": "Return Form",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "Return form",
+      "label": "Heading"
+    }
+  ],
+  "presets": [{
+    "name": "Return Form"
+  }]
+}
+{% endschema %}
