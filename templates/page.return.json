@@ -9,7 +9,12 @@
     },
     "form": {
       "type": "return-form",
-      "settings": {}
+      "settings": {
+
+      },
+      "presets": [{
+        "name": "Return Form"
+      }]
     }
   },
   "order": [

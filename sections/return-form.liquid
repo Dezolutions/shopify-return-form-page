@@ -35,7 +35,7 @@
             class="return-form__email-field input-field"
             type="email"
             name="contact[email]"
-            placeholder="Email"
+            placeholder="E-mail"
             required
           />
           <input
@@ -45,47 +45,63 @@
             placeholder="Phone"
             required
           />
-          <textarea 
-            class="return-form__reason-field" 
-            placeholder="Reason..." 
-            rows="3" 
-            name="contact[reason_of_returning]" 
-            cols="33">   
-          </textarea>
+          <input
+            class="return-form__reason-field input-field"
+            type="text"
+            name="contact[reason_of_return]"
+            placeholder="Why you want to return this product?"
+            required
+          />
           
           {% if customer and customer.orders.size > 0 %}
   
-            <select 
-              id="orderSelect" 
-              class="return-form__select-order" 
-              name="contact[order_number]"
-            >
-              {% for order in customer.orders %}
-                <option 
-                  selected="false" 
-                  id="{{ order.name }}" 
-                  data-url="{{ order.customer_url }}" 
-                  value="{{ order.name }}">
-                    {{ order.name }}
-                  </option>
-              {% endfor %}
-            </select>
+            <div class="return-form__select-block">
+              <label for="orderSelect">Select order:</label>
+              <select 
+                id="orderSelect" 
+                class="return-form__select-order" 
+                name="contact[order_number]"
+                required
+              >
+                <option disabled selected value> -- select an order -- </option>
+                {% for order in customer.orders %}
+                  <option 
+                    id="{{ order.name }}" 
+                    data-url="{{ order.customer_url }}" 
+                    value="{{ order.name }}">
+                      {{ order.name }}
+                    </option>
+                {% endfor %}
+              </select>
+            </div>
   
             <div class="return-form__products">
               <h3 class="products__title">Products:</h3> 
               <ul class="products__list">
-                Select the order
+                <p>Select order to choose products for return!</p>
               </ul> 
             </div>
   
           {% else %}
-            <input type="text" class="return-form__order-field input-field" name="contact[order_number]" required/>
-            <input type="text" class="return-form__products-field input-field" name="contact[order_products]" required/>
+            <input 
+              type="text" 
+              class="return-form__order-field input-field" 
+              name="contact[order_number]"
+              placeholder="Order number..."
+              required
+            />
+            <input 
+              type="text" 
+              class="return-form__products-field input-field" 
+              name="contact[order_products]"
+              placeholder="Product titles..."
+              required
+            />
           {% endif %}
-          
+        <button class="return-form__submit" type="submit">Submit</button>
         </div>
   
-        <button class="return-form__submit" type="submit">Submit</button>
+        
         {% if customer and customer.orders.size > 0 %}
           <script>
             const orderSelect = document.getElementById('orderSelect');
@@ -103,9 +119,12 @@
                   data.items.map((item,index) => {
                     const li = document.createElement('li');
                     li.innerHTML = `
-                      <input type="checkbox" value="${item.title}" name="contact[${item.title}]"/>
-                      <div style="display:inline-block;width:50px;height:50px;background-color:#ccc;"><img src="${item.img}"/></div>
-                      <label for="${item.title}">${item.title}</label>
+                      <label class="product-item">
+                        <input class="product-item__checkbox" type="checkbox" value="${item.title}" name="contact[products_${index}]"/>
+                        <span class="product-item__custom-checkbox"></span>
+                        <div class="product-item__img-block"><img src="${item.img}"/></div>
+                        <p>${item.title}</p>
+                      </label>
                     `;
                     list.appendChild(li);
                   })  
