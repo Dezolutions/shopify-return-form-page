@@ -19,7 +19,6 @@ if (!customElements.get('order-select')) {
           fetch(`${orderUrl}?view=return_form`)
             .then(res => res.json())
             .then(data => {
-              console.log(this)
               this.productsTitle.innerText = data.title;
 
               //Remove old data
