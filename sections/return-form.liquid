@@ -1,77 +1,120 @@
 {{ 'return-form.css' | asset_url | stylesheet_tag }}
 
-
 <div class="page-width">
-  <h1>Return Form</h1>
-  {% form 'contact', id: 'ReturnFrom' %}
-    {%- if form.posted_successfully? -%}
-        <h2 class="">
-          Thank you for submitting. We will contact you as soon as possible with next steps.
-        </h2>
-      {%- elsif form.errors -%}
-        <div class="">
+  <div class="return-form__block">
+    <h1 class="return-form__title">Return Form</h1>
+    {% form 'contact', id: 'ReturnFrom', class: 'return-form' %}
+      {%- if form.posted_successfully -%}
           <h2 class="">
-            Error
+            Thank you for submitting. We will contact you as soon as possible with next steps.
           </h2>
+        {%- elsif form.errors -%}
+          <div class="">
+            <h2 class="">
+              Error
+            </h2>
+          </div>
+        {%- endif -%}
+  
+        <div class="return-form__fields">
+          <input
+            class="return-form__name-field input-field"
+            type="text"
+            name="contact[name]"
+            placeholder="Name"
+            required
+          />
+          <input
+            class="return-form__surname-field input-field"
+            type="text"
+            name="contact[surname]"
+            placeholder="Surname"
+            required
+          />
+          <input
+            class="return-form__email-field input-field"
+            type="email"
+            name="contact[email]"
+            placeholder="Email"
+            required
+          />
+          <input
+            class="return-form__phone-field input-field"
+            type="phone"
+            name="contact[phone]"
+            placeholder="Phone"
+            required
+          />
+          <textarea 
+            class="return-form__reason-field" 
+            placeholder="Reason..." 
+            rows="3" 
+            name="contact[reason_of_returning]" 
+            cols="33">   
+          </textarea>
+          
+          {% if customer and customer.orders.size > 0 %}
+  
+            <select 
+              id="orderSelect" 
+              class="return-form__select-order" 
+              name="contact[order_number]"
+            >
+              {% for order in customer.orders %}
+                <option 
+                  selected="false" 
+                  id="{{ order.name }}" 
+                  data-url="{{ order.customer_url }}" 
+                  value="{{ order.name }}">
+                    {{ order.name }}
+                  </option>
+              {% endfor %}
+            </select>
+  
+            <div class="return-form__products">
+              <h3 class="products__title">Products:</h3> 
+              <ul class="products__list">
+                Select the order
+              </ul> 
+            </div>
+  
+          {% else %}
+            <input type="text" class="return-form__order-field input-field" name="contact[order_number]" required/>
+            <input type="text" class="return-form__products-field input-field" name="contact[order_products]" required/>
+          {% endif %}
+          
         </div>
-      {%- endif -%}
-
-      <div class="return-form__fields">
-        <input
-          type="text"
-          name="contact[name]"
-          placeholder="Name"
-          required
-        />
-        <input
-          type="text"
-          name="contact[surname]"
-          placeholder="Surname"
-          required
-        />
-        <input
-          type="email"
-          name="contact[email]"
-          placeholder="Email"
-          required
-        />
-        <input
-          type="phone"
-          name="contact[phone]"
-          placeholder="Phone"
-          required
-        />
-        <textarea name="reason" placeholder="Reason" rows="5" name="contact[eason_of_returning]" cols="33">   
-        </textarea>
+  
+        <button class="return-form__submit" type="submit">Submit</button>
         {% if customer and customer.orders.size > 0 %}
-
-          <select id="orderSelect" name="contact[order_number]">
-            {% for order in customer.orders %}
-              <option 
-                selected="false" 
-                id="{{ order.name }}" 
-                data-url="{{ order.customer_url }}" 
-                value="{{ order.name }}">
-                  {{ order.name }}
-                </option>
-            {% endfor %}
-          </select>
-
-          <div class="return-form__products">
-            <h3 class="products__title"></h3> 
-            <ul class="products__list">
-            </ul> 
-        </div>
-
-        {% else %}
-          <input type="text" name="contact[order_number]" required/>
+          <script>
+            const orderSelect = document.getElementById('orderSelect');
+  
+            orderSelect.addEventListener('change', (event) => {
+              const orderUrl = document.getElementById(`${event.target.value}`).dataset.url;
+  
+              fetch(`${orderUrl}?view=return_form`)
+                .then(res => res.json())
+                .then(data => {
+                  document.querySelector('.products__title').innerText = data.title;
+                  const list = document.querySelector('.products__list');
+                  list.innerHTML = '';
+  
+                  data.items.map((item,index) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                      <input type="checkbox" value="${item.title}" name="contact[${item.title}]"/>
+                      <div style="display:inline-block;width:50px;height:50px;background-color:#ccc;"><img src="${item.img}"/></div>
+                      <label for="${item.title}">${item.title}</label>
+                    `;
+                    list.appendChild(li);
+                  })  
+                })
+            });
+          </script>
         {% endif %}
-        
-      </div>
-
-      <button class="return-form__submit" type="submit">Submit</button>
-      
-  {% endform %}
+    {% endform %}
+  </div>
 
 </div>
 {% schema %}

@@ -1,0 +1,14 @@
+{% layout none %}
+
+{
+  "title": "Products from order {{ order.name }}",
+  "items": [
+    {% for item in order.line_items %}
+      {
+        "title": "{{ item.product.title }}",
+        "img": "{{ item.product | image_url: width: 50 }}"
+      }
+      {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
