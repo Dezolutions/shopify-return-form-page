@@ -1,9 +1,10 @@
 {{ 'return-form.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'return-form-elements.js' | asset_url }}" defer="defer"></script>
 
 <div class="page-width">
   <div class="return-form__block">
     <h1 class="return-form__title">Return Form</h1>
-    {% form 'contact', id: 'ReturnFrom', class: 'return-form' %}
+    {% form 'contact', id: 'ReturnForm', class: 'return-form' %}
       {%- if form.posted_successfully -%}
           <h2 class="">
             Thank you for submitting. We will contact you as soon as possible with next steps.
@@ -49,38 +50,40 @@
             class="return-form__reason-field input-field"
             type="text"
             name="contact[reason_of_return]"
-            placeholder="Why you want to return this product?"
+            placeholder="Why do you want to return this product?"
             required
           />
           
           {% if customer and customer.orders.size > 0 %}
   
-            <div class="return-form__select-block">
-              <label for="orderSelect">Select order:</label>
-              <select 
-                id="orderSelect" 
-                class="return-form__select-order" 
-                name="contact[order_number]"
-                required
-              >
-                <option disabled selected value> -- select an order -- </option>
-                {% for order in customer.orders %}
-                  <option 
-                    id="{{ order.name }}" 
-                    data-url="{{ order.customer_url }}" 
-                    value="{{ order.name }}">
-                      {{ order.name }}
-                    </option>
-                {% endfor %}
-              </select>
-            </div>
-  
-            <div class="return-form__products">
-              <h3 class="products__title">Products:</h3> 
-              <ul class="products__list">
-                <p>Select order to choose products for return!</p>
-              </ul> 
-            </div>
+            <order-select class="return-form__wrapper">
+              <div class="return-form__select-block">
+                <label for="orderSelect">Select order:</label>
+                <select 
+                  id="orderSelect" 
+                  class="return-form__select-order" 
+                  name="contact[order_number]"
+                  required
+                >
+                  <option disabled selected value> -- select an order -- </option>
+                  {% for order in customer.orders %}
+                    <option 
+                      id="{{ order.name }}" 
+                      data-url="{{ order.customer_url }}" 
+                      value="{{ order.name }}">
+                        {{ order.name }}
+                      </option>
+                  {% endfor %}
+                </select>
+              </div>
+    
+              <div class="return-form__products">
+                <h3 class="products__title">Products:</h3> 
+                <ul class="products__list">
+                  <p>Select order to choose products for return!</p>
+                </ul> 
+              </div>
+            </order-select>
   
           {% else %}
             <input 
@@ -100,41 +103,9 @@
           {% endif %}
         <button class="return-form__submit" type="submit">Submit</button>
         </div>
-  
-        
-        {% if customer and customer.orders.size > 0 %}
-          <script>
-            const orderSelect = document.getElementById('orderSelect');
-  
-            orderSelect.addEventListener('change', (event) => {
-              const orderUrl = document.getElementById(`${event.target.value}`).dataset.url;
-  
-              fetch(`${orderUrl}?view=return_form`)
-                .then(res => res.json())
-                .then(data => {
-                  document.querySelector('.products__title').innerText = data.title;
-                  const list = document.querySelector('.products__list');
-                  list.innerHTML = '';
-  
-                  data.items.map((item,index) => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `
-                      <label class="product-item">
-                        <input class="product-item__checkbox" type="checkbox" value="${item.title}" name="contact[products_${index}]"/>
-                        <span class="product-item__custom-checkbox"></span>
-                        <div class="product-item__img-block"><img src="${item.img}"/></div>
-                        <p>${item.title}</p>
-                      </label>
-                    `;
-                    list.appendChild(li);
-                  })  
-                })
-            });
-          </script>
-        {% endif %}
+
     {% endform %}
   </div>
-
 </div>
 {% schema %}
 {
