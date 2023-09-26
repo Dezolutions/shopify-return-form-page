@@ -207,8 +207,10 @@
       "form_submitted": "Thank you for submitting. We will contact you as soon as possible with next steps.",
       "form_error": "Error",
       "submit_btn": "Submit",
+      "select_order": "Select order:",
+      "select_order_option": " -- select an order -- ",
       "products_heading": "Products:",
-      "no_products": "Select the order please!"
+      "no_products": "Select order to choose products for return!"
     },
     "search": {
       "no_results": "No results found for “{{ terms }}”. Check the spelling or use a different word or phrase.",

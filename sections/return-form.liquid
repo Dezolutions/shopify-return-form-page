@@ -3,7 +3,7 @@
 
 <div class="page-width">
   <div class="return-form__block">
-    <h1 class="return-form__title">Return Form</h1>
+    <h1 class="return-form__title">{{ 'templates.return_form.title' | t }}</h1>
       
       <return-form class="return-form__wrapper">
         
@@ -52,14 +52,14 @@
     
               <order-select class="return-form__wrapper">
                 <div class="return-form__select-block">
-                  <label for="orderSelect">Select order:</label>
+                  <label for="orderSelect">{{ 'templates.return_form.select_order' | t }}</label>
                   <select 
                     id="orderSelect" 
                     class="return-form__select-order" 
                     name="order_number"
                     required
                   >
-                    <option disabled selected value> -- select an order -- </option>
+                    <option disabled selected value>{{ 'templates.return_form.select_order_option' | t }}</option>
                     {% for order in customer.orders %}
                       <option 
                         id="{{ order.name }}" 
@@ -72,9 +72,9 @@
                 </div>
       
                 <div class="return-form__products">
-                  <h3 class="products__title">Products:</h3> 
+                  <h3 class="products__title">{{ 'templates.return_form.products_heading' | t }}</h3> 
                   <ul class="products__list">
-                    <p>Select order to choose products for return!</p>
+                    <p>{{ 'templates.return_form.no_products' | t }}</p>
                   </ul>
                   <input type="text" name="products_list" value="" class="products-list-values"/> 
                 </div>
@@ -96,7 +96,7 @@
                 required
               />
             {% endif %}
-          <button class="return-form__submit" type="submit">Submit</button>
+          <button class="return-form__submit" type="submit">{{ 'templates.return_form.submit_btn' | t }}</button>
           {% unless customer %}
             {% style %}
               @media screen and (min-width: 680px) {
