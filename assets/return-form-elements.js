@@ -94,36 +94,47 @@ if (!customElements.get('return-form')) {
           this.errorMessage.classList.add('none')
           this.errorMessage.innerText = '';
           this.loader.classList.remove('loader-none')
-        this.form.querySelector('.return-form__fields').classList.add('submitting');
-        // Send the form data to the API Gateway.
-        fetch('https://bfg7yldc83.execute-api.us-east-1.amazonaws.com/new/submitdata', {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          method: 'POST',
-          body: JSON.stringify(formValues)
-        })
-          .then(response => response.json())
-          .then(response => {
-            this.form.querySelectorAll('input, select, textarea').forEach((field) => {
-              field.value = '';
-            });
-            this.form.querySelector('.return-form__fields').classList.remove('submitting');
-            this.loader.classList.add('loader-none');
-            this.successMessage.classList.remove('none');
-            this.successMessage.innerText = response.body;
+          this.form.querySelector('.return-form__fields').classList.add('submitting');
+          // Send the form data to the API Gateway.
 
-            if (this.productsList && this.productsTitle) {
-              this.productsTitle.innerText = 'Products:';
-              this.productsList.innerHTML = 'Select order to choose products for return!';
-            }
+          try {
+            fetch('https://bfg7yldc83.execute-api.us-east-1.amazonaws.com/new/submitdata', {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+              method: 'POST',
+              body: JSON.stringify(formValues)
+            })
+            .then(response => response.json())
+            .then(response => {
 
-          })
+              if(response.statusCode === 500 ) {
+                this.errorMessage.classList.remove('none');
+                this.errorMessage.innerText = response.body; 
+              } else {
+                this.successMessage.classList.remove('none');
+                this.successMessage.innerText = response.body;
+              }
+              this.form.querySelectorAll('input, select, textarea').forEach((field) => {
+                field.value = '';
+              });
+              this.form.querySelector('.return-form__fields').classList.remove('submitting');
+              this.loader.classList.add('loader-none');
+              
 
-          .catch(error => {
-            console.log(error);
-          });
-        }
+              if (this.productsList && this.productsTitle) {
+                this.productsTitle.innerText = 'Products:';
+                this.productsList.innerHTML = 'Select order to choose products for return!';
+              }
+
+            })
+
+          } catch (error) {
+              console.log(error);
+          
+          }
+          
+          }
         
 
 
