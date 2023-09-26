@@ -368,6 +368,12 @@
     }
   },
   "sections": {
+    "return_form": {
+      "title": "Return Form",
+      "settings": {
+        "label": "Heading"
+      }
+    },
     "all": {
       "animation": {
         "content": "Animations",
