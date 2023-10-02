@@ -1,0 +1,132 @@
+{{ 'return-form.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'return-form-elements.js' | asset_url }}" defer="defer"></script>
+
+<div class="page-width">
+  <div class="return-form__block">
+    <h1 class="return-form__title">{{ 'templates.return_form.title' | t }}</h1>
+      
+      <return-form class="return-form__wrapper">
+        
+        <div class="return-form__success none"></div>
+        <div class="return-form__error none"></div>
+        <form id="ReturnForm">
+          <span class="loader loader-none"></span>
+          <div class="return-form__fields">
+            <input
+              class="return-form__name-field input-field"
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+            />
+            <input
+              class="return-form__surname-field input-field"
+              type="text"
+              name="surname"
+              placeholder="Surname"
+              required
+            />
+            <input
+              class="return-form__email-field input-field"
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              required
+            />
+            <input
+              class="return-form__phone-field input-field"
+              type="phone"
+              name="phone"
+              placeholder="Phone"
+              required
+            />
+            <input
+              class="return-form__reason-field input-field"
+              type="text"
+              name="reason_of_return"
+              placeholder="Why do you want to return this product?"
+              required
+            />
+            
+            {% if customer and customer.orders.size > 0 %}
+    
+              <order-select class="return-form__wrapper">
+                <div class="return-form__select-block">
+                  <label for="orderSelect">{{ 'templates.return_form.select_order' | t }}</label>
+                  <select 
+                    id="orderSelect" 
+                    class="return-form__select-order" 
+                    name="order_number"
+                    required
+                  >
+                    <option disabled selected value>{{ 'templates.return_form.select_order_option' | t }}</option>
+                    {% for order in customer.orders %}
+                      <option 
+                        id="{{ order.name }}" 
+                        data-url="{{ order.customer_url }}" 
+                        value="{{ order.name }}">
+                          {{ order.name }}
+                        </option>
+                    {% endfor %}
+                  </select>
+                </div>
+      
+                <div class="return-form__products">
+                  <h3 class="products__title">{{ 'templates.return_form.products_heading' | t }}</h3> 
+                  <ul class="products__list">
+                    <p>{{ 'templates.return_form.no_products' | t }}</p>
+                  </ul>
+                  <input type="text" name="products_list" value="" class="products-list-values"/> 
+                </div>
+              </order-select>
+    
+            {% else %}
+              <input 
+                type="text" 
+                class="return-form__order-field input-field" 
+                name="order_number"
+                placeholder="Order number..."
+                required
+              />
+              <input 
+                type="text" 
+                class="return-form__products-field input-field" 
+                name="products_list"
+                placeholder="Product titles..."
+                required
+              />
+            {% endif %}
+          <button class="return-form__submit" type="submit">{{ 'templates.return_form.submit_btn' | t }}</button>
+          {% unless customer %}
+            {% style %}
+              @media screen and (min-width: 680px) {
+                .return-form__submit {
+                  grid-column: 1/3;
+                }
+              }
+            {% endstyle %}
+          {% endunless %}
+          </div>
+  
+        </form>
+      </return-form>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "t:sections.return_form.title",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "Return form",
+      "label": "t:sections.return_form.settings.label"
+    }
+  ],
+  "presets": [{
+    "name": "Return Form"
+  }]
+}
+{% endschema %}
