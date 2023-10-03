@@ -281,7 +281,7 @@
                     let discountCode = discountCodeInput.value;
 
                     if (discountCode == null || discountCode.trim() === "") {
-                        let messageNull = BSS_B2B.dcTranslations.messageNull;
+                        let messageNull = BSS_B2B.dcTranslations ? BSS_B2B.dcTranslations.messageNull : "";
                         if (BSS_B2B.integrate && BSS_B2B.integrate.langShop && BSS_B2B.integrate.langShop.dcTranslations
                             && BSS_B2B.integrate.langShop.dcTranslations.message_discount_code_null
                         ) {
@@ -487,10 +487,10 @@
         let btnApply = document.querySelectorAll("#bss-b2b-discount-code-submit span");
         if (headerDiscountForm.length && btnApply.length) {
             headerDiscountForm.forEach((item) => {
-                item.innerText = BSS_B2B.dcTranslations.form_header_text;
+                item.innerText = BSS_B2B.dcTranslations ? BSS_B2B.dcTranslations.form_header_text : "";
             });
             btnApply.forEach((item) => {
-                item.innerText = BSS_B2B.dcTranslations.button_apply;
+                item.innerText = BSS_B2B.dcTranslations ? BSS_B2B.dcTranslations.button_apply : "";
             });
         }
     }, 100)
