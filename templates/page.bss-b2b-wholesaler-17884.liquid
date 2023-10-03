@@ -29,4 +29,17 @@
             </script>
             <style>input[bss-b2b-password-hidden]{ display: none;}null</style>
             
-            
+            {% assign bss-b2b-include-password = true %}
+<div class="page-width">
+    <div class="grid">
+        <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
+            <div class="section-header text-center">
+                <h1>{{ page.title }}</h1>
+            </div>
+            <div class="rte">
+                {{ page.content }}
+            </div>
+        </div>
+        {% section 'bss-b2b-wholesaler-form-17884' %}
+    </div>
+</div>
