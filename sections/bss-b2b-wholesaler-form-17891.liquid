@@ -19,15 +19,7 @@
             {% if form.first_name %}value="{{ form.first_name }}"{% endif %}
             autocomplete="given-name" />
         </div>
-        <div class="field {{ formId }}-LastName">
-          <label for="{{ formId }}-LastName">{{ 'customer.register.last_name' | t }}</label>
-          <input
-            type="text"
-            name="customer[last_name]"
-            id="{{ formId }}-LastName"
-            {% if form.last_name %}value="{{ form.last_name }}"{% endif %}
-            autocomplete="family-name" />
-        </div>
+        
         <div class="field {{ formId }}-email">
           <label for="{{ formId }}-email">{{ 'customer.register.email' | t }}</label>
           <input
