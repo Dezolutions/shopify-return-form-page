@@ -89,6 +89,63 @@
                 </a>
               </div>
             {%- when 'price' -%}
+            <div class="product-price-block" >
+              <p class="price-block__sale">Sale</p>
+              <div class="product-price__item">
+                {% assign diff = 0 %}
+
+                {% if product.compare_at_price > product.price %}
+
+                  {% capture discount_percentage %}
+                    {{ product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price | round }}
+                  {% endcapture %}
+                  {% assign discount_percentage = discount_percentage | remove: ".0" %}
+
+                {% else %}
+
+                  {% assign discount_percentage = 0 %}
+
+                {% endif %}
+
+                {% if product.compare_at_price %}
+                
+                  {% if product.compare_at_price > product.price %}
+                    {% assign diff = product.compare_at_price | minus: product.price %}
+                    <p>{{ product.price | money }}</p>
+                  {% else %}
+                    {% assign diff = product.price | minus: product.compare_at_price %}
+                    <p>{{ product.compare_at_price | money }}</p>
+                  {% endif %}
+                  
+                {% else %}
+                  {{ product.price | money }}
+                {% endif %}
+                
+              </div>
+              <div class="compare-price">
+                <span>Was</span>
+                <span class="compare-price__item">
+                  {% if product.compare_at_price %}
+                
+                  {% if product.compare_at_price > product.price %}
+                    
+                    <p>{{ product.compare_at_price | money }}</p>
+                  {% else %}
+      
+                    <p>{{ product.price | money }}</p>
+                  {% endif %}
+                  
+                {% else %}
+                  {{ product.price | money }}
+                {% endif %}
+                </span>
+              </div>
+              <div class="saved-money">
+                <span>Save</span>
+                <span class="diff">{{ diff | money }}</span>
+                <span class="discount-percent">({{ discount_percentage }}%)</span>
+              </div>
+            </div>
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                 {%- render 'price',
                   product: product,
