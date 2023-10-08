@@ -47,18 +47,19 @@
     "3a4021c8-7471-4397-a0ca-c6d7da398296": {
       "type": "collection-list",
       "blocks": {
-        "template--20095981682984__3a4021c8-7471-4397-a0ca-c6d7da398296-featured_collection-1": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
         "template--20095981682984__3a4021c8-7471-4397-a0ca-c6d7da398296-featured_collection-2": {
           "type": "featured_collection",
           "settings": {
             "collection": ""
           }
         },
+        "template--20095981682984__3a4021c8-7471-4397-a0ca-c6d7da398296-featured_collection-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        
         "template--20095981682984__3a4021c8-7471-4397-a0ca-c6d7da398296-featured_collection-3": {
           "type": "featured_collection",
           "settings": {
