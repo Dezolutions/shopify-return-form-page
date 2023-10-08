@@ -10,11 +10,7 @@
     "form": {
       "type": "return-form",
       "settings": {
-
-      },
-      "presets": [{
-        "name": "Return Form"
-      }]
+      }
     }
   },
   "order": [
