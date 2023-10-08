@@ -4,21 +4,6 @@
     "b2b": true
   },
   "sections": {
-    "3a4021c8-7471-4397-a0ca-c6d7da398296": {
-      "disabled": false,
-      "settings": {
-      },
-      "blocks": {
-        "template--20095981682984__3a4021c8-7471-4397-a0ca-c6d7da398296-featured_collection-1": {
-          "settings": {
-            "collection": "hydrogen"
-          }
-        }
-      },
-      "block_order": [
-        "template--20095981682984__3a4021c8-7471-4397-a0ca-c6d7da398296-featured_collection-1"
-      ]
-    },
     "2754d014-075c-44dc-91dd-e002f8de0ac2": {
       "type": "slideshow",
       "disabled": false,
@@ -82,7 +67,6 @@
     }
   },
   "order": [
-    "3a4021c8-7471-4397-a0ca-c6d7da398296",
     "2754d014-075c-44dc-91dd-e002f8de0ac2"
   ]
 }
