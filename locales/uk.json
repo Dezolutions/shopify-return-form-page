@@ -1629,7 +1629,75 @@
       "announcement_bar": "Панель оголошень"
     },
     "header": {
-      "announcement": "Оголошення"
+      "announcement": "Оголошення",
+      "menu": "Меню",
+      "cart_count": {
+        "one": "{{ count }} елемент",
+        "other": "{{ count }} елементів"
+      }
+    },
+    "cart": {
+      "title": "Ваш кошик",
+      "caption": "Пункти кошика",
+      "remove_title": "Видалити {{ title }}",
+      "subtotal": "Проміжний підсумок",
+      "new_subtotal": "Новий проміжний підсумок",
+      "note": "Замовляйте спеціальні інструкції",
+      "checkout": "Перевірити",
+      "empty": "Ваш кошик порожній",
+      "cart_error": "Під час оновлення вашого кошика сталася помилка. Будь ласка спробуйте ще раз.",
+      "cart_quantity_error_html": "Ви можете додати лише {{ quantity }} цього товару до свого кошика.",
+      "taxes_and_shipping_policy_at_checkout_html": "Податки та вартість <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;\/span&gt;\">доставки<\/a> розраховуються під час оформлення замовлення",
+      "taxes_included_but_shipping_at_checkout": "Податок включено, вартість доставки розраховується під час оформлення замовлення",
+      "taxes_included_and_shipping_policy_html": "З податком. <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;\/span&gt;\">Вартість доставки<\/a> розраховується при оформленні замовлення.",
+      "taxes_and_shipping_at_checkout": "Податки та вартість доставки розраховуються під час оформлення замовлення",
+      "headings": {
+        "product": "Продукт",
+        "price": "Ціна",
+        "total": "Всього",
+        "quantity": "Кількість",
+        "image": "Зображення продукту"
+      },
+      "update": "оновлення",
+      "login": {
+        "title": "Є обліковий запис?",
+        "paragraph_html": "<a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;\/span&gt;\" class=\"link underlined-link\">Увійдіть<\/a> , щоб швидше розрахуватися."
+      }
+    },
+    "footer": {
+      "payment": "Методи оплати"
+    },
+    "featured_blog": {
+      "view_all": "Подивитись все",
+      "onboarding_title": "Публікація в блозі",
+      "onboarding_content": "Дайте своїм клієнтам короткий виклад публікації в блозі"
+    },
+    "featured_collection": {
+      "view_all": "Подивитись все",
+      "view_all_label": "Переглянути всі продукти в колекції {{ collection_name }}"
+    },
+    "collection_list": {
+      "view_all": "Подивитись все"
+    },
+    "collection_template": {
+      "empty": "Продукти не знайдено",
+      "title": "Колекція",
+      "use_fewer_filters_html": "Використовуйте менше фільтрів або <a class=\"&lt;span class='notranslate'&gt;{{ class }}&lt;\/span&gt;\" href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;\/span&gt;\">видаліть усі<\/a>"
+    },
+    "video": {
+      "load_video": "Завантажити відео: {{ description }}"
+    },
+    "slideshow": {
+      "load_slide": "Завантажити слайд",
+      "previous_slideshow": "Попередній слайд",
+      "next_slideshow": "Наступний слайд",
+      "pause_slideshow": "Призупинити слайд-шоу",
+      "play_slideshow": "Відтворити слайд-шоу",
+      "carousel": "Карусель",
+      "slide": "слайд"
+    },
+    "page": {
+      "title": "Назва сторінки"
     }
   },
   "customer": {
@@ -1821,5 +1889,83 @@
     "language_label": "Мова",
     "update_language": "Оновити мову",
     "update_country": "Оновіть країну\/регіон"
+  },
+  "general": {
+    "password_page": {
+      "login_form_heading": "Увійти в магазин за допомогою пароля:",
+      "login_password_button": "Введіть пароль",
+      "login_form_password_label": "Пароль",
+      "login_form_password_placeholder": "Ваш пароль",
+      "login_form_error": "Неправильний пароль!",
+      "login_form_submit": "Введіть",
+      "admin_link_html": "Ви власник магазину? <a href=\"\/admin\" class=\"link underlined-link\">Увійдіть тут<\/a>",
+      "powered_by_shopify_html": "Цей магазин працюватиме на базі {{ shopify }}"
+    },
+    "social": {
+      "alt_text": {
+        "share_on_facebook": "Поділіться на Facebook",
+        "share_on_twitter": "Твітнути в Twitter",
+        "share_on_pinterest": "Закріпити на Pinterest"
+      },
+      "links": {
+        "tiktok": "Tik Tok"
+      }
+    },
+    "continue_shopping": "Продовжити покупки",
+    "pagination": {
+      "label": "Пагінація",
+      "page": "Сторінка {{ number }}",
+      "next": "Наступна сторінка",
+      "previous": "Попередня сторінка"
+    },
+    "search": {
+      "search": "Пошук",
+      "reset": "Очистити термін пошуку"
+    },
+    "cart": {
+      "view": "Переглянути кошик ( {{ count }} )",
+      "view_empty_cart": "Переглянути кошик",
+      "item_added": "Товар додано у ваш кошик"
+    },
+    "share": {
+      "close": "Закрити частку",
+      "copy_to_clipboard": "Копіювати посилання",
+      "share_url": "Посилання",
+      "success_message": "Посилання скопійовано в буфер обміну"
+    },
+    "slider": {
+      "of": "з",
+      "next_slide": "Посуньте праворуч",
+      "previous_slide": "Проведіть ліворуч",
+      "name": "повзунок"
+    }
+  },
+  "newsletter": {
+    "label": "Електронна пошта",
+    "success": "Дякуємо за підписку",
+    "button_label": "Підпишіться"
+  },
+  "accessibility": {
+    "skip_to_text": "Перейти до вмісту",
+    "skip_to_product_info": "Перейти до інформації про продукт",
+    "close": "Закрити",
+    "unit_price_separator": "пер",
+    "vendor": "Постачальник:",
+    "error": "Помилка",
+    "refresh_page": "Вибір вибору призводить до повного оновлення сторінки.",
+    "link_messages": {
+      "new_window": "Відкриється в новому вікні.",
+      "external": "Відкриває зовнішній веб-сайт."
+    },
+    "loading": "Завантаження...",
+    "total_reviews": "всього оглядів",
+    "star_reviews_info": "{{ rating_value }} зірок із {{ rating_max }}",
+    "collapsible_content_title": "Контент, що згортається",
+    "complementary_products": "Додаткові продукти"
+  },
+  "blogs": {
+    "article": {
+      "blog": "Блог"
+    }
   }
 }
