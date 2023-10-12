@@ -708,6 +708,182 @@
         "list_loading_address_accessibility_message": "Завантаження адреси для {{locationName}}",
         "list_loading_finished_accessibility_message": "Список місць завантажено"
       }
+    },
+    "payment_methods": {
+      "payment_delete": {
+        "warning_message_without_replacement": {
+          "with_subscriptions": "Видалення цього способу оплати вплине на попередні авторизації платежів. Додайте альтернативний спосіб оплати, щоб продовжувати отримувати майбутні замовлення."
+        },
+        "payment_method_selector_placeholder": "Виберіть інший спосіб оплати (необов’язково)",
+        "payment_method_selector_no_alternative_payment": "Без способу заміни",
+        "replace_method_with_new_method_description": "Ваш {{currentPaymentMethodName}} буде видалено та замінено вашим {{newPaymentMethodName}} .",
+        "error_when_deleting": "Просимо вибачення, але щось пішло не так, і ми не змогли видалити цей спосіб оплати. Повторіть спробу пізніше або оновіть сторінку.",
+        "delete_and_replace_button": "Видалити і замінити",
+        "delete_and_replace_button_accessibility_label": "Видаліть {{currentPaymentMethodName}} і замініть на {{newPaymentMethodName}} .",
+        "deleted_successfully": "Спосіб оплати успішно видалено.",
+        "loading_available_payment_methods_accessibility_label": "Завантаження доступних способів оплати"
+      },
+      "add_payment_method": {
+        "title": "Додати спосіб оплати",
+        "payment_method_added_confirmation": "Спосіб оплати додано",
+        "billing_address": {
+          "title": "Платіжна адреса",
+          "add_billing_address_button": "Додати новий",
+          "add_billing_address_button_accessibility_label": "Додайте нову платіжну адресу",
+          "choose_billing_address_from_list_button": "Виберіть зі списку",
+          "choose_billing_address_from_list_button_accessibility_label": "Виберіть платіжну адресу зі списку",
+          "missing_billing_address_error_message": "Будь ласка, вкажіть платіжну адресу"
+        }
+      }
+    },
+    "payment_method_brands": {
+      "visa": "Віза",
+      "discover": "Відкрийте для себе",
+      "elo": "Ело",
+      "maestro": "Маестро",
+      "dankort": "Данкорт",
+      "hipercard": "Гіперкарта",
+      "laser": "Лазерна",
+      "shoppay": "Магазин Pay"
+    },
+    "shop_policies": {
+      "legal_notice": "Юридичне повідомлення",
+      "privacy_policy": "Політика конфіденційності",
+      "refund_policy": "Політика відшкодування",
+      "shipping_policy": "Політика доставки",
+      "subscription_policy": "Політика передплати",
+      "terms_of_sale": "Умови продажу",
+      "terms_of_service": "Умови використання"
+    },
+    "ui_components": {
+      "closeNotification": "Закрити",
+      "expandNotification": "Дивитись більше",
+      "closeModal": "Закрити",
+      "submit": "Надіслати",
+      "processing": "Обробка…",
+      "increase": "Збільшити {{type}}",
+      "decrease": "Зменшити {{type}}",
+      "minimumReached": "Досягнуто мінімум {{value}}",
+      "maximumReached": "Досягнуто максимум {{value}}",
+      "january": "січня",
+      "february": "Лютий",
+      "march": "березень",
+      "april": "квітень",
+      "may": "Може",
+      "june": "червень",
+      "july": "липень",
+      "august": "серпень",
+      "september": "Вересень",
+      "october": "жовтень",
+      "november": "Листопад",
+      "december": "Грудень",
+      "monday": "понеділок",
+      "tuesday": "вівторок",
+      "wednesday": "Середа",
+      "thursday": "четвер",
+      "friday": "П'ятниця",
+      "saturday": "Субота",
+      "sunday": "неділя",
+      "mondayAbbreviation": "пн",
+      "tuesdayAbbreviation": "вт",
+      "wednesdayAbbreviation": "ми",
+      "thursdayAbbreviation": "чт",
+      "fridayAbbreviation": "О",
+      "sundayAbbreviation": "Нд",
+      "showNextMonth": "Показати наступний місяць, {{month}} {{year}}",
+      "showPreviousMonth": "Показати попередній місяць, {{month}} {{year}}",
+      "rangeStart": "Початок діапазону",
+      "inRange": "В діапазоні",
+      "rangeEnd": "Кінець діапазону",
+      "autocompleteOptionsAvailable": {
+        "one": "Доступно {{count}} товар",
+        "other": "Доступні товари {{count}}"
+      },
+      "removeItem": "Видалити {{label}}",
+      "removeTag": "Видалити тег",
+      "month": {
+        "one": "місяць",
+        "other": "місяців"
+      }
+    },
+    "profile_preview_bar": {
+      "customize_button": "Налаштувати",
+      "hide_bar": "Приховати панель",
+      "navigate_to_admin": "Перейдіть до адміністратора",
+      "previewing": "Ви переглядаєте:",
+      "saved_at": "Збережено {{date}} о {{time}}",
+      "viewing": "Ви переглядаєте:"
+    }
+  },
+  "sections": {
+    "announcements": {
+      "previous_announcement": "Попереднє оголошення",
+      "next_announcement": "Наступне оголошення",
+      "carousel": "Карусель",
+      "announcement": "Оголошення",
+      "announcement_bar": "Панель оголошень"
+    },
+    "header": {
+      "announcement": "Оголошення"
+    }
+  },
+  "customer": {
+    "orders": {
+      "date": "Дата",
+      "payment_status": "Статус платежу",
+      "fulfillment_status": "Статус виконання",
+      "total": "Всього",
+      "none": "Ви ще не розмістили жодного замовлення."
+    },
+    "recover_password": {
+      "title": "Скинути пароль",
+      "subtext": "Ми надішлемо вам електронний лист для скидання пароля",
+      "success": "Ми надіслали вам електронний лист із посиланням для оновлення пароля."
+    },
+    "register": {
+      "title": "Створити акаунт",
+      "first_name": "Ім'я",
+      "last_name": "Прізвище",
+      "email": "Електронна пошта",
+      "password": "Пароль",
+      "submit": "Створити"
+    },
+    "reset_password": {
+      "title": "Скинути пароль облікового запису",
+      "subtext": "Введіть новий пароль",
+      "password": "Пароль",
+      "password_confirm": "Підтвердьте пароль",
+      "submit": "Скинути пароль"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "how_to_use_gift_card": "Використовуйте код подарункової картки онлайн або QR-код у магазині",
+      "title": "Ось ваш баланс подарункової картки {{ value }} для {{ shop }} !",
+      "subtext": "Ваша подарункова картка",
+      "gift_card_code": "Код подарункової картки",
+      "shop_link": "Відвідайте інтернет-магазин",
+      "add_to_apple_wallet": "Додати в Apple Wallet",
+      "qr_image_alt": "QR-код — відскануйте, щоб отримати подарункову картку",
+      "copy_code": "Скопіюйте код подарункової картки",
+      "expiration_date": "Термін дії закінчується {{ expires_on }}",
+      "copy_code_success": "Код успішно скопійовано",
+      "expired": "Термін дії минув"
+    }
+  },
+  "recipient": {
+    "form": {
+      "checkbox": "Я хочу надіслати це як подарунок",
+      "email_label": "Електронна адреса одержувача",
+      "email_label_optional_for_no_js_behavior": "Електронна адреса одержувача (необов’язково)",
+      "email": "Електронна пошта",
+      "name_label": "Ім'я одержувача (необов'язково)",
+      "name": "Ім'я",
+      "message_label": "Повідомлення (необов'язково)",
+      "message": "повідомлення",
+      "max_characters": "Макс. символів {{ max_chars }}",
+      "send_on": "РРРР-ММ-ДД",
+      "send_on_label": "Надіслати (необов'язково)"
     }
   }
 }
