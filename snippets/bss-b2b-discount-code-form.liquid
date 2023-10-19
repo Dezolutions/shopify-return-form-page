@@ -424,7 +424,11 @@
                                                 );
                                             }
                                         } else {
-                                            BSS_B2B.customize.dc.checkLimitAmount(data, messageDiscountCode, discountCodeInput, discountCodeApplied, Shopify);
+                                           window.BSS_B2B.executeAction(
+                                            'dc_check_limit_amount',
+                                            3793,
+                                            data, messageDiscountCode, discountCodeInput, discountCodeApplied, Shopify
+                                          );
                                         }
                                     } else {
                                         messageDiscountCode.style.color = "red";
