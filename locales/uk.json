@@ -1374,7 +1374,139 @@
         "store_credit": {
           "label": "Кредит магазину",
           "apply_label": "Застосуйте кредит магазину"
-        }
+        },
+        "credit_card_start_year": "Початковий рік",
+        "delete_customer_mandate_modal_title": "Видалити цю платіжну картку?",
+        "clear": "ясно",
+        "billing_must_match_shipping_notice": "Платіжна адреса вашого способу оплати має збігатися з адресою доставки.",
+        "same_billing_address_checkbox_label": "Використовуйте адресу доставки як платіжну адресу",
+        "location_billing_address_label": "Розташування платіжної адреси",
+        "fact_billing_address_label": "Платіжна адреса",
+        "location_shipping_address_label": "Місцезнаходження адреси доставки",
+        "use_order_billing_address_label": "Використовуйте платіжну адресу замовлення",
+        "use_location_billing_address_label": "Використовуйте платіжну адресу за місцезнаходженням",
+        "use_location_shipping_address_label": "Використовуйте місцезнаходження адреси доставки",
+        "no_working_method_error": "Цей магазин зараз не може приймати платежі. Оновіть цю сторінку або поверніться пізніше.",
+        "brand_not_available": "Цей магазин не приймає {{brand}} . Для оплати використовуйте іншу картку.",
+        "shipping_rate_updated": "Доступні способи доставки оновлено. Підтвердьте свій вибір перед виїздом.",
+        "billing_address_invalid_phone": "Щоб продовжити, оновіть номер телефону у своїй платіжній адресі для {{label}} {{last_digits}} .",
+        "billing_address_invalid_phone_no_card": "Щоб продовжити, оновіть номер телефону у своїй платіжній адресі.",
+        "preview_not_available": {
+          "title": "Попередній перегляд недоступний",
+          "content": "Не хвилюйтеся, ця експрес-оплата працює для ваших клієнтів.",
+          "button": "В порядку"
+        },
+        "card_fields": {
+          "errors": {
+            "required": {
+              "issue_date": "Введіть дійсну дату випуску",
+              "issue_number": "Введіть дійсний номер випуску"
+            },
+            "invalid": {
+              "verification_value": "Введіть дійсний CVV або код безпеки"
+            }
+          }
+        },
+        "simulated_checkout": "Попередній перегляд незабаром",
+        "vaulting_agreement_label": "Збережіть мою платіжну інформацію в %{company} для швидшої оплати.",
+        "business_customer_vaulting_payment_label": "Збережіть цю картку під час оплати та дозвольте %{company} стягувати з цієї картки кошти для майбутніх покупок у цьому місці. Будь-який клієнт, призначений для цього місця, матиме право використовувати цю картку.",
+        "purchase_options_and_vaulting_agreement_label": "Один або кілька товарів у вашому кошику є відкладеною покупкою або покупкою за підпискою. Продовжуючи платіж, ви погоджуєтеся, що з вашого методу оплати автоматично стягуватиметься плата за ціною та частотою, указаними на цій сторінці, доки він не закінчиться або ви не скасуєте його. Усі скасування регулюються %{cancellation_policy_label}.",
+        "purchase_options_cancellation_policy_label": "політика скасування",
+        "use_different_credit_card_label": "Використовуйте іншу картку",
+        "saved_credit_card": "Ваша збережена кредитна картка",
+        "saved_credit_card_info": "Останні чотири цифри",
+        "saved_credit_card_actions": {
+          "edit": "Редагувати",
+          "delete": "Видалити"
+        },
+        "saved_credit_cards_modal": {
+          "view_all_label": "Переглянути всі збережені картки",
+          "done": "Готово",
+          "cancel": "Скасувати"
+        },
+        "add_credit_card_modal": {
+          "title": "Додати картку",
+          "save": "зберегти",
+          "cancel": "Скасувати"
+        },
+        "delete_credit_card_modal": {
+          "title": "Видалити картку",
+          "confirmation": "Ви впевнені, що хочете видалити {{brandName}} , що закінчується на {{lastDigits}} ?",
+          "cancel": "Скасувати",
+          "delete": "Видалити"
+        },
+        "edit_credit_card_modal": {
+          "title": "Редагувати картку",
+          "done": "Готово",
+          "cancel": "Скасувати",
+          "description": "Ви можете лише змінити платіжну адресу своєї картки.",
+          "fields": {
+            "default": "Встановити за замовчуванням",
+            "card_number": "Номер картки",
+            "expiry": "Термін придатності",
+            "security_code": "Код безпеки",
+            "name": "Ім'я на картці",
+            "billing": "Виставити рахунок"
+          }
+        },
+        "expired_cards_info": {
+          "one": "Існує %{count} прострочена картка, яку ви можете переглядати та редагувати у своєму обліковому записі.",
+          "other": "Є %{count} прострочених карток, які ви можете переглядати та редагувати у своєму обліковому записі."
+        },
+        "local_payment_method_receiver_notice": "Після оформлення замовлення ви отримаєте реквізити для оплати. Здійсніть платіж через банкомат або онлайн протягом {{dueDays}} днів.",
+        "order_edit_banner_title": "Потрібно сплатити {{amount_owed}}",
+        "order_edit_banner_subtitle": "Ваше замовлення {{order_number}} оновлено. Перегляньте ці зміни, а потім сплатіть, щоб підтвердити замовлення.",
+        "order_edit_banner_items_added": {
+          "one": "Додано",
+          "other": "%{count} додано"
+        },
+        "order_edit_banner_items_removed": {
+          "in_full": "Видалено",
+          "with_quantities": "Видалено {{delta}} із {{quantity}}"
+        },
+        "order_edit_banner_items_returned": {
+          "in_full": "Повернувся",
+          "with_quantities": "Повернуто {{delta}} із {{quantity}}"
+        },
+        "order_edit_banner_single_item_added": "Додано",
+        "order_edit_banner_multiple_items_added": "Додано {{amount}}",
+        "order_edit_banner_single_item_removed": "Видалено",
+        "order_edit_banner_multiple_items_removed": "{{amount}} видалено",
+        "order_edit_banner_single_item_returned": "Повернувся",
+        "order_edit_banner_multiple_items_returned": "{{amount}} повернуто",
+        "gift_card_wrapper": {
+          "heading": "Подарункова картка",
+          "apply_gift_card_label": "Застосувати подарункову картку",
+          "apply_another_gift_card_label": "Застосуйте іншу подарункову картку",
+          "gift_card_label": "Подарункова картка %{identifier}",
+          "payment_tag": "Подарункова картка"
+        },
+        "custom_onsite_payment_method_modal": {
+          "title": "Спеціальне підтвердження оплати на місці"
+        },
+        "markets_pro_disclaimer_label": "Натиснувши нижче та завершивши своє замовлення, ви погоджуєтеся придбати свої товари в Global-e як офіційного продавця для цієї транзакції на %{markets_pro_terms} і %{privacy_policy} Global-e. Global-e є міжнародним постачальником послуг виконання для %{shop_name}",
+        "markets_pro_disclaimer_terms_and_conditions": "Правила та умови",
+        "markets_pro_disclaimer_privacy_policy": "Політика конфіденційності",
+        "markets_pro_disclaimer_terms_and_conditions_title": "Положення та умови офіційного продавця",
+        "markets_pro_disclaimer_privacy_policy_title": "Політика конфіденційності відомого продавця",
+        "purchase_order_number": {
+          "title": "номер замовлення на замовлення",
+          "label": "Номер замовлення на замовлення (необов'язково)"
+        },
+        "alternative_payment_currency_total_notice": "Примітка: з вас буде стягнуто %{amount_due}.",
+        "waiting_on_taxes_message": "Якщо ваші податки не обчислюються протягом наступних кількох секунд, оновіть сторінку.",
+        "waiting_on_taxes_notice": "Розрахунок податків",
+        "payment_method": "Спосіб оплати",
+        "expired_payment_method": "Термін дії вибраного способу оплати закінчився"
+      },
+      "billing": {
+        "billing_address_title": "Виставити рахунок",
+        "same_as_shipping": "Така сама, як адреса доставки",
+        "add_address": "Використовуйте іншу адресу",
+        "edit": "Редагувати",
+        "delete": "Видалити",
+        "address_more": "Інші дії для цієї адреси",
+        "address_edit": "Редагувати адресу"
       }
     },
     "pagination": {
