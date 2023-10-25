@@ -343,7 +343,8 @@
           "accessibility_label": "%{price} за товар",
           "label": "%{price}\/шт"
         },
-        "quantity_label": "Кількість"
+        "quantity_label": "Кількість",
+        "updated_shipping_method": "Оновлений спосіб доставки: %{shipping_method}"
       },
       "subscriptions": {
         "recurring_totals": "%{total_price} кожні %{interval}",
@@ -649,7 +650,8 @@
         "gift_card_invalid": "Подарункова картка «••••%{last_four_characters}» більше не діє",
         "vaulting_agreement_blank": "Щоб продовжити, вам потрібно зберегти нову кредитну картку, оскільки оплата за це замовлення відбудеться пізніше.",
         "sms_marketing_phone_invalid": "Введіть дійсний номер телефону",
-        "address_suggestion_did_you_mean_html": "Ви мали на увазі %{html}?"
+        "address_suggestion_did_you_mean_html": "Ви мали на увазі %{html}?",
+        "credit_card_number_blank": "Введіть номер картки"
       },
       "store_credit_errors": {
         "generic_error": "Виникла проблема з кредитом вашого магазину. Повторіть спробу або оновіть сторінку."
@@ -1376,7 +1378,10 @@
         "order_covered_by_redeemables_notice": "Ваше замовлення покрито.",
         "store_credit": {
           "label": "Кредит магазину",
-          "apply_label": "Застосуйте кредит магазину"
+          "apply_label": "Застосуйте кредит магазину",
+          "add_label": "Додайте кредит магазину",
+          "manage_label": "Керуйте кредитом магазину",
+          "buying_gift_card": "Ви не можете використовувати кредит магазину, щоб купити подарункову картку"
         },
         "credit_card_start_year": "Початковий рік",
         "delete_customer_mandate_modal_title": "Видалити цю платіжну картку?",
@@ -1520,6 +1525,11 @@
       },
       "vaulted": {
         "change_button": "Зміна"
+      },
+      "shipping": {
+        "split_cart_ships_now": "Відправляється зараз",
+        "split_cart_ships_later": "Відправляється пізніше",
+        "split_cart_ships_by_date": "Доставка до %{date}"
       }
     },
     "pagination": {
@@ -1741,7 +1751,8 @@
         "shipping_address_invalid": "Виникла проблема під час розрахунку вартості доставки. Перейдіть до оформлення замовлення, щоб вибрати тариф доставки, перш ніж завершити замовлення.",
         "bundle_requires_components": "Продукт пакету «%{name}» не можна додати до кошика.",
         "gift_card_with_components_not_supported": "Продукт пакету «%{name}» не можна додати до кошика.",
-        "bundle_products_not_supported_for_b2b_draft": "Збірні товари не можна додати до замовлень B2B для цього місця."
+        "bundle_products_not_supported_for_b2b_draft": "Збірні товари не можна додати до замовлень B2B для цього місця.",
+        "view_lines_limit_reached": "Рядки мають бути меншими ніж %{limit}"
       },
       "storefront": {
         "invalid_password": "Неправильний пароль, спробуйте ще раз."
@@ -2564,7 +2575,8 @@
           "add_billing_address_button_accessibility_label": "Додайте нову платіжну адресу",
           "choose_billing_address_from_list_button": "Виберіть зі списку",
           "choose_billing_address_from_list_button_accessibility_label": "Виберіть платіжну адресу зі списку",
-          "missing_billing_address_error_message": "Будь ласка, вкажіть платіжну адресу"
+          "missing_billing_address_error_message": "Будь ласка, вкажіть платіжну адресу",
+          "default_checkbox": "Встановити як спосіб оплати за умовчанням"
         }
       },
       "title": "Методи оплати",
@@ -2621,7 +2633,8 @@
         "invalid_payment_method": "Недійсний спосіб оплати",
         "invalid_payment_method_message": "Використовуйте нову кредитну картку, щоб продовжувати отримувати наступні замовлення.",
         "replace_payment_method": "Замінити спосіб оплати",
-        "checkout_card_banner": "Цей спосіб оплати можна використовувати лише для попередньо авторизованих платежів. Він не з’явиться під час оплати, якщо ви ввійшли в цей магазин."
+        "checkout_card_banner": "Цей спосіб оплати можна використовувати лише для попередньо авторизованих платежів. Він не з’явиться під час оплати, якщо ви ввійшли в цей магазин.",
+        "default_checkbox_accessibility_label": "Встановити цей спосіб оплати за умовчанням"
       },
       "edit_payment_method": {
         "title": "Редагувати спосіб оплати",
@@ -2631,7 +2644,8 @@
         "billing_address": "Платіжна адреса",
         "billing_address_add_new": "Додати новий",
         "billing_address_choose_from_list": "Виберіть зі списку",
-        "future_purchases_notice": "Цей спосіб оплати буде збережено для майбутніх покупок."
+        "future_purchases_notice": "Цей спосіб оплати буде збережено для майбутніх покупок.",
+        "generic_error": "Під час оновлення виникла проблема. Будь ласка спробуйте ще раз."
       },
       "card_fields": {
         "card_number_label": "Номер картки",
