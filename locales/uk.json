@@ -3036,7 +3036,8 @@
       "title": "Результати пошуку",
       "search_for": "Знайдіть “ {{ terms }} ”",
       "suggestions": "Пропозиції",
-      "pages": "сторінки"
+      "pages": "сторінки",
+      "no_results": "Не знайдено результатів для “ {{ terms }} ”. Перевірте правопис або використайте інше слово чи фразу."
     },
     "cart": {
       "cart": "кошик"
@@ -3052,6 +3053,19 @@
         "post_success": "Дякуємо, що звернулися до нас. Ми зв’яжемося з вами якомога швидше.",
         "error_heading": "Налаштуйте наступне:"
       }
+    },
+    "404": {
+      "title": "Сторінку не знайдено"
+    },
+    "return_form": {
+      "title": "Форма повернення",
+      "form_submitted": "Дякуємо за надсилання. Ми зв’яжемося з вами якнайшвидше і надамо подальші кроки.",
+      "form_error": "Помилка",
+      "submit_btn": "Надіслати",
+      "select_order": "Виберіть замовлення:",
+      "select_order_option": " -- вибрати замовлення -- ",
+      "products_heading": "Продукти:",
+      "no_products": "Виберіть замовлення, щоб обрати товари для повернення!"
     }
   },
   "localization": {
@@ -3136,6 +3150,45 @@
   "blogs": {
     "article": {
       "blog": "Блог"
+    }
+  },
+  "products": {
+    "product": {
+      "include_taxes": "З податком.",
+      "shipping_policy_html": "<a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;\/span&gt;\">Вартість доставки<\/a> розраховується при оформленні замовлення."
+    },
+    "modal": {
+      "label": "Медіа галерея"
+    },
+    "facets": {
+      "apply": "Застосувати",
+      "clear": "ясно",
+      "clear_all": "Видалити все",
+      "from": "Від",
+      "filter_and_sort": "Відфільтрувати та відсортувати",
+      "filter_by_label": "Фільтр:",
+      "filter_button": "фільтр",
+      "filters_selected": {
+        "one": "Вибрано {{ count }}",
+        "other": "Вибрано {{ count }}"
+      },
+      "filter_selected_accessibility": "{{ type }} ( {{ count }} фільтрів вибрано)",
+      "show_more": "Показати більше",
+      "show_less": "Показувати менше",
+      "max_price": "Найвища ціна – {{ price }}",
+      "product_count": {
+        "one": "{{ product_count }} з {{ count }} продукту",
+        "other": "{{ product_count }} з {{ count }} продуктів"
+      },
+      "product_count_simple": {
+        "one": "{{ count }} продукт",
+        "other": "{{ count }} продуктів"
+      },
+      "reset": "Скинути",
+      "sort_button": "Сортувати",
+      "sort_by_label": "Сортувати за:",
+      "to": "до",
+      "clear_filter": "Зняти фільтр"
     }
   }
 }
