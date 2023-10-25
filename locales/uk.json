@@ -1724,7 +1724,23 @@
       "open_menu_accessibility_label": "Відкрити основну навігацію",
       "orders_link_label": "Замовлення",
       "shop_logo_accessibility_label": "Логотип {{shopName}}",
-      "subscriptions_link_label": "Підписки"
+      "subscriptions_link_label": "Підписки",
+      "account_menu": {
+        "open_menu_accessibility_label": "Відкрийте навігацію обліковим записом",
+        "close_menu_accessibility_label": "Закрийте навігацію обліковим записом",
+        "loading_message": "Завантаження навігації обліковим записом"
+      },
+      "action_menu_accessibility_label": "Більше дій",
+      "close_menu_accessibility_label": "Закрити основну навігацію",
+      "contact_email_subject": "Контакт з інтернет-магазину {{shopName}}",
+      "contact_link": "Зв'яжіться з нами",
+      "delete_confirmation": {
+        "cancel": "Скасувати",
+        "delete": "Видалити"
+      },
+      "dismiss_toast": "Відхилити",
+      "document_title": "{{sectionName}} - {{shopName}} - Обліковий запис",
+      "go_to_store_link": "Іди в магазин"
     },
     "account_information": {
       "loading_accessibility_message": "Завантаження інформації про обліковий запис",
@@ -1988,7 +2004,13 @@
       "group_title_label": "Частина: {{groupTitle}}",
       "havent_received_your_delivery": "Не отримали свою доставку?",
       "didnt_pick_up_order": "Не забрали замовлення?",
-      "if_you_didnt_receive_this": "Якщо ви не отримали цього,"
+      "if_you_didnt_receive_this": "Якщо ви не отримали цього,",
+      "if_not_received": {
+        "one": "Якщо не було отримано,",
+        "other": "Якщо їх не отримали,"
+      },
+      "let_us_know": "Дайте нам знати",
+      "contact_us": "зв'яжіться з нами."
     },
     "order_details": {
       "total": "Всього",
@@ -2001,7 +2023,115 @@
       "login_to_view_all_order_details": "Увійдіть, щоб переглянути всі деталі замовлення.",
       "log_in": "авторизуватися",
       "logged_in_account_no_permission_to_order": "Ви ввійшли як {{email}} . Цей обліковий запис не має дозволу на керування цим замовленням.",
-      "log_in_to_a_different_account": "Увійдіть в інший обліковий запис"
+      "log_in_to_a_different_account": "Увійдіть в інший обліковий запис",
+      "shipment_timeline": {
+        "expand_events_label": "Показати деталі",
+        "expand_events_accessibility_label": "Показати деталі доставки замовлення",
+        "hide_events_label": "Приховати деталі",
+        "hide_events_accessibility_label": "Приховати деталі доставки замовлення"
+      },
+      "addresses_section_title": "Оплата та доставка",
+      "order_details": "Деталі замовлення",
+      "order_details_skeleton_accessibility_label": "Увійдіть, щоб переглянути всі деталі замовлення.",
+      "billing_address": "Платіжна адреса",
+      "card_ending_with": "закінчується на {{lastDigits}}",
+      "contact": "контакт",
+      "contact_information": "Контактна інформація",
+      "company": "Компанія",
+      "fully_refunded_label": "ПОВЕРНЕНО",
+      "group_title_label": "Частина: {{groupTitle}}",
+      "discount": "Знижка",
+      "hide_items": "Приховати елементи",
+      "loading": "Завантаження деталей замовлення",
+      "loading_finished_accessibility_message": "Деталі замовлення завантажено",
+      "location": "Місцезнаходження",
+      "image_gallery": {
+        "next": "Показати наступні елементи",
+        "previous": "Показати попередні елементи"
+      },
+      "mobile_summary_toggle_button": {
+        "open": "Показати зведення замовлення",
+        "closed": "Приховати підсумок замовлення"
+      },
+      "no_data": "Жодного",
+      "no_data_provided_accessibility_label": "{{fieldName}} порожнє",
+      "paid_amount": "Платний",
+      "partially_refunded_label": "ЧАСТКОВО ПОВЕРНЕНО",
+      "payment": {
+        "status_in_review": "Оплата після перевірки",
+        "status_unpaid": "Термін оплати: {{date}}",
+        "title": "Оплата",
+        "card_payment_details": "закінчується на {{lastDigits}} - {{formattedTransactionAmount}}",
+        "gift_card_payment_details": "закінчується на {{lastDigits}} - {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "Оплата частинами через Shop Pay.",
+          "view_schedule": "Переглянути розклад"
+        },
+        "manual_payment_methods": {
+          "money_order": "Грошовий переказ - {{formattedTransactionAmount}}",
+          "cash_on_delivery": "Оплата при доставці (COD) - {{formattedTransactionAmount}}",
+          "bank_deposit": "Банківський депозит - {{formattedTransactionAmount}}"
+        }
+      },
+      "paid_with_shop_pay_installments_card": {
+        "paid_with_shop_pay_installments": "Оплата в розстрочку в магазині",
+        "description": "Слідкуйте за розкладом платежів за допомогою нагадувань у додатку Shop.",
+        "payment_reminders_button": "Отримуйте нагадування про оплату",
+        "desktop_qr_code_content": {
+          "title": "Пошук нагадувань",
+          "description": "Отримуйте нагадування про платежі за допомогою Shop."
+        }
+      },
+      "refunded_amount": "Повернено",
+      "request_return_failed": "Виникла проблема з обробкою вашого запиту. Будь ласка спробуйте ще раз.",
+      "remaining_amount": "Залишилося",
+      "marketing_section_title": "Новини та пропозиції",
+      "marketing_description": "Ви отримуватимете маркетингові електронні листи. Ви можете скасувати підписку в будь-який час.",
+      "marketing_checkbox_label": "Пишіть мені новини та пропозиції електронною поштою",
+      "marketing_checkmark_label": "Ви підписані на отримання електронною поштою новин і пропозицій",
+      "returns": {
+        "expand_events_label": "Показати деталі",
+        "hide_events_label": "Приховати деталі",
+        "ineligible_return_message": "Жоден товар у цьому замовленні не підлягає поверненню.",
+        "ineligible_return_message_when_returned": "Жодні додаткові товари в цьому замовленні не підлягають поверненню.",
+        "print_shipping_label": "Роздрукуйте транспортну етикетку",
+        "return_and_refund_modal_header": "Політика відшкодування",
+        "tracking_number": "Номер відстеження:"
+      },
+      "shipping": {
+        "address": "Адреса доставки",
+        "address_map_marker": "Адреса доставки",
+        "method": "Метод доставки",
+        "summary": "Доставка",
+        "free": "безкоштовно",
+        "free_shipping_discount": "Безкоштовна доставка",
+        "one_time": "Одноразова доставка",
+        "subscription": "Доставка за підпискою"
+      },
+      "pickup": {
+        "pickup": "Пікап",
+        "pickup_location": "Місце отримання"
+      },
+      "show_items": "Показати елементи",
+      "show_order_summary": "Показати зведення замовлення",
+      "hide_order_summary": "Приховати підсумок замовлення",
+      "subtitle": "Підтверджено {{date}}",
+      "subtotal": "Проміжний підсумок",
+      "summary_list_title_accessibility_label": "Товари замовлення",
+      "summary_title": "Підсумок Замовлення",
+      "summary_totals_title_accessibility_label": "Сума замовлення",
+      "shop_order_tracking": {
+        "download_shop_to_track": "Завантажте магазин, щоб відстежити пакет",
+        "track_order_with_shop": "Відстежуйте замовлення в магазині",
+        "title_header": "Скануйте за допомогою телефону",
+        "real_time_delivery_updates": "Магазин надішле вам оновлення доставки в реальному часі, щойно ваше замовлення буде відправлено."
+      },
+      "edit_summary": {
+        "added": "Додано",
+        "added_with_quantity": "Додано {{quantity}}",
+        "removed": "Видалено",
+        "removed_with_quantity": "{{quantity}} видалено"
+      }
     },
     "addresses": {
       "add_button": "Додайте адресу",
