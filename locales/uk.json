@@ -2289,8 +2289,23 @@
         "added": "Додано",
         "added_with_quantity": "Додано {{quantity}}",
         "removed": "Видалено",
-        "removed_with_quantity": "{{quantity}} видалено"
-      }
+        "removed_with_quantity": "{{quantity}} видалено",
+        "updated_at": "Ваше замовлення оновлено {{date}}",
+        "returned": "Повернувся",
+        "returned_with_quantities": "Повернуто {{delta}} із {{total}}",
+        "removed_with_quantities": "Видалено {{delta}} із {{total}}"
+      },
+      "shop_pay": {
+        "order_completed_with": "Замовлення виконано с",
+        "learn_more": "Вивчайте більше"
+      },
+      "taxes": "податки",
+      "duties": "Обов'язки",
+      "ok_duties_tooltip": "Це замовлення доставляється з іншої країни, тому до загальної суми замовлення додано мита.",
+      "error_duties_tooltip": "Це замовлення доставляється з іншої країни, тому під час доставки можуть стягуватися мита та податки.",
+      "zero_duties_tooltip": "Це замовлення доставляється з іншої країни. На замовлення такої вартості мито не стягується.",
+      "tip": "Порада",
+      "title": "Замовити {{name}}"
     },
     "addresses": {
       "add_button": "Додайте адресу",
@@ -2634,7 +2649,8 @@
         "invalid_payment_method_message": "Використовуйте нову кредитну картку, щоб продовжувати отримувати наступні замовлення.",
         "replace_payment_method": "Замінити спосіб оплати",
         "checkout_card_banner": "Цей спосіб оплати можна використовувати лише для попередньо авторизованих платежів. Він не з’явиться під час оплати, якщо ви ввійшли в цей магазин.",
-        "default_checkbox_accessibility_label": "Встановити цей спосіб оплати за умовчанням"
+        "default_checkbox_accessibility_label": "Встановити цей спосіб оплати за умовчанням",
+        "default_checkbox": "Встановити за замовчуванням"
       },
       "edit_payment_method": {
         "title": "Редагувати спосіб оплати",
@@ -2671,7 +2687,8 @@
           "credit_card_expiry_invalid": "Введіть дійсну дату закінчення терміну дії картки",
           "credit_card_verification_value_blank": "Введіть CVV або код безпеки на картці"
         }
-      }
+      },
+      "default": "За замовчуванням"
     },
     "payment_method_brands": {
       "visa": "Віза",
@@ -3163,13 +3180,85 @@
   },
   "blogs": {
     "article": {
-      "blog": "Блог"
+      "blog": "Блог",
+      "read_more_title": "Докладніше: {{ title }}",
+      "comments": {
+        "one": "{{ count }} коментар",
+        "other": "{{ count }} коментарів"
+      },
+      "moderated": "Будь ласка, зверніть увагу, коментарі повинні бути затверджені перед публікацією.",
+      "comment_form_title": "Залишити коментар",
+      "name": "Ім'я",
+      "email": "Електронна пошта",
+      "message": "коментар",
+      "post": "Опублікувати коментар",
+      "back_to_blog": "Назад до блогу",
+      "share": "Поділіться цією статтею",
+      "success": "Ваш коментар успішно опубліковано! Дякую тобі!",
+      "success_moderated": "Ваш коментар успішно опубліковано. Ми опублікуємо його незабаром, оскільки наш блог модерується."
     }
   },
   "products": {
     "product": {
       "include_taxes": "З податком.",
-      "shipping_policy_html": "<a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;\/span&gt;\">Вартість доставки<\/a> розраховується при оформленні замовлення."
+      "shipping_policy_html": "<a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;\/span&gt;\">Вартість доставки<\/a> розраховується при оформленні замовлення.",
+      "add_to_cart": "Додати в кошик",
+      "choose_options": "Виберіть варіанти",
+      "choose_product_options": "Виберіть параметри для {{ product_name }}",
+      "description": "опис",
+      "inventory_in_stock": "В наявності",
+      "inventory_in_stock_show_count": "{{ quantity }} в наявності",
+      "inventory_low_stock": "Низький запас",
+      "inventory_low_stock_show_count": "Малий запас: залишилось {{ quantity }}",
+      "inventory_out_of_stock": "Немає на складі",
+      "inventory_out_of_stock_continue_selling": "В наявності",
+      "on_sale": "Розпродаж",
+      "product_variants": "Варіанти товару",
+      "media": {
+        "gallery_viewer": "Переглядач галереї",
+        "load_image": "Завантажити зображення {{ index }} у режимі галереї",
+        "load_model": "Завантажте 3D-модель {{ index }} у режимі галереї",
+        "load_video": "Відтворити відео {{ index }} у режимі галереї",
+        "image_available": "Зображення {{ index }} тепер доступне в галереї",
+        "open_media": "Відкрити носій {{ index }} у модальному режимі",
+        "play_model": "Грати в 3D Viewer",
+        "play_video": "Відтворити відео"
+      },
+      "quantity": {
+        "label": "Кількість",
+        "input_label": "Кількість для {{ product }}",
+        "increase": "Збільшити кількість для {{ product }}",
+        "decrease": "Зменшити кількість для {{ product }}",
+        "minimum_of": "Мінімум {{ quantity }}",
+        "maximum_of": "Максимум {{ quantity }}",
+        "multiples_of": "Збільшення на {{ quantity }}",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}<\/span> у кошику"
+      },
+      "pickup_availability": {
+        "view_store_info": "Переглянути інформацію про магазин",
+        "check_other_stores": "Уточнюйте наявність в інших магазинах",
+        "pick_up_available": "Можливий самовивіз",
+        "pick_up_available_at_html": "Забрати можна в <span class=\"color-foreground\">{{ location_name }}<\/span>",
+        "pick_up_unavailable_at_html": "Самовивезення наразі недоступне в <span class=\"color-foreground\">{{ location_name }}<\/span>",
+        "unavailable": "Не вдалося завантажити інформацію про можливість самовивозу",
+        "refresh": "Оновити"
+      },
+      "price": {
+        "from_price_html": "Від {{ price }}",
+        "regular_price": "Звичайна ціна",
+        "sale_price": "Ціна продажу",
+        "unit_price": "Ціна за одиницю"
+      },
+      "share": "Поділіться цим продуктом",
+      "sold_out": "Продано",
+      "unavailable": "Недоступний",
+      "vendor": "Продавець",
+      "value_unavailable": "{{ option_value }} – Недоступно",
+      "variant_sold_out_or_unavailable": "Варіант розпроданий або відсутній",
+      "video_exit_message": "{{ title }} відкриває відео на весь екран у тому ж вікні.",
+      "view_full_details": "Переглянути повну інформацію",
+      "xr_button": "Перегляньте у своєму просторі",
+      "xr_button_label": "Переглядайте у своєму просторі, завантажуйте предмет у вікні доповненої реальності"
     },
     "modal": {
       "label": "Медіа галерея"
@@ -3204,5 +3293,9 @@
       "to": "до",
       "clear_filter": "Зняти фільтр"
     }
+  },
+  "onboarding": {
+    "product_title": "Приклад назви продукту",
+    "collection_title": "Назва вашої колекції"
   }
 }
