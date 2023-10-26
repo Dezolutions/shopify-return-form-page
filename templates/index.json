@@ -303,6 +303,71 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "169835799793f6b053": {
+      "type": "apps",
+      "blocks": {
+        "34329df8-0ac9-47da-bfaf-295ad819fea3": {
+          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/full-page\/a103faaf-2125-4b0e-89fa-de5149736723",
+          "settings": {
+            "product_image": true,
+            "take": 30,
+            "label_substitute": "",
+            "color_star": "",
+            "color_verified": "",
+            "color_text": "",
+            "color_link": "",
+            "review_ids": "",
+            "product_ids": "",
+            "category": "",
+            "product_brand": "",
+            "tags": "",
+            "min_rating": "none",
+            "fill_empty": false,
+            "random": false,
+            "with_photos": false
+          }
+        },
+        "18963b2b-a864-4809-ad1b-f831f11ed724": {
+          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/main-widget\/a103faaf-2125-4b0e-89fa-de5149736723",
+          "settings": {
+            "animation": true,
+            "tags_exclude": "",
+            "tags_include": "",
+            "search": "",
+            "linkify": true,
+            "use_metafields": false,
+            "sku_tagtype": "sku"
+          }
+        },
+        "dfa8b133-b953-4c7a-bb5d-ca52815797cd": {
+          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/visual-gallery\/a103faaf-2125-4b0e-89fa-de5149736723",
+          "settings": {
+            "feed_type": "feed",
+            "auto_play": false,
+            "color_star": "",
+            "color_hover": "",
+            "color_hover_opacity": 50,
+            "review_ids": "",
+            "product_ids": "",
+            "category": "",
+            "product_brand": "",
+            "tags": "",
+            "min_rating": "none",
+            "fill_empty": false,
+            "random": false,
+            "with_photos": false
+          }
+        }
+      },
+      "block_order": [
+        "34329df8-0ac9-47da-bfaf-295ad819fea3",
+        "18963b2b-a864-4809-ad1b-f831f11ed724",
+        "dfa8b133-b953-4c7a-bb5d-ca52815797cd"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -312,6 +377,7 @@
     "549a09e6-ae20-4812-a9db-8cb673400df2",
     "0e072ce1-66a3-4dae-adf3-f2c1f2042243",
     "acf644b6-1304-4feb-a793-80369a52dae5",
-    "90cc1a96-629f-404f-9d4d-b3429b2a1aeb"
+    "90cc1a96-629f-404f-9d4d-b3429b2a1aeb",
+    "169835799793f6b053"
   ]
 }
