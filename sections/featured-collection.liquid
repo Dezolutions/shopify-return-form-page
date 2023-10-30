@@ -48,7 +48,8 @@
   endif
 -%}
 
-<div class="color-{{ section.settings.color_scheme }} isolate gradient">
+{% capture collection_section %}
+        <div class="color-{{ section.settings.color_scheme }} isolate gradient">
   <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}">
     <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
       {%- if section.settings.title != blank -%}
@@ -162,7 +163,9 @@
   </div>
 </div>
 
-{% schema %}
+{% endcapture %}
+        {% comment %}start BSS Commerce Hide Collection{% endcomment %}{% assign bsshp = product | default: prod | default: item | default: recommendation %}{% assign collec = 0 %}{% assign collec_id_custom = 0 %}{% if collection %}{% assign collec = collection %}{% elsif block.settings.collection %}{% assign collec = block.settings.collection %}{% else if section.settings.collection %}{% assign collec = section.settings.collection %}{% endif %}{% capture hide_product %}{% render 'bsscommerce-hide-product', product: bsshp, collection: collec, collec_id_custom: collec_id_custom %}{% endcapture %}{% unless hide_product contains "true" %}{{ collection_section }}{% endunless %}{% comment %}end BSS Commerce Hide Collection{% endcomment %}
+        {% schema %}
 {
   "name": "t:sections.featured-collection.name",
   "tag": "section",
