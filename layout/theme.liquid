@@ -330,14 +330,16 @@
     </script>
     <script>
       const cool = async () => {
-        await fetch(
+        const result = await fetch(
           window.Shopify.routes.root
             + 'browsing_context_suggestions.json'
             + '?country[enabled]=true'
             + `&country[exclude]=${window.Shopify.country}`
             + '&language[enabled]=true'
             + `&language[exclude]=${window.Shopify.language}`
-        ).then(r => console.log(r.json()));
+        ).then(r => r.json());
+
+        console.log(result)
       }
 
       cool()
