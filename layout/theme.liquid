@@ -328,7 +328,16 @@
         playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
       };
     </script>
-
+    <script>
+        await fetch(
+          window.Shopify.routes.root
+            + 'browsing_context_suggestions.json'
+            + '?country[enabled]=true'
+            + `&country[exclude]=${window.Shopify.country}`
+            + '&language[enabled]=true'
+            + `&language[exclude]=${window.Shopify.language}`
+        ).then(r => console.log(r.json()));
+    </script>
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
