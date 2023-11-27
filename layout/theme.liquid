@@ -329,6 +329,7 @@
       };
     </script>
     <script>
+      const cool = async () => {
         await fetch(
           window.Shopify.routes.root
             + 'browsing_context_suggestions.json'
@@ -337,6 +338,10 @@
             + '&language[enabled]=true'
             + `&language[exclude]=${window.Shopify.language}`
         ).then(r => console.log(r.json()));
+      }
+
+      cool()
+        
     </script>
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
