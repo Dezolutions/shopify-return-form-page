@@ -344,19 +344,22 @@
       console.log(window.Shopify.country)
       // cool()
       
-      // function updateLocalization({country, language}) {
-      //   const formId = crypto.randomUUID();
-      //   const formHtml = `
-      //     <form id="${formId}" action="/localization" method="POST" hidden>
-      //       <input name="_method" value="PUT">
-      //       <input name="country_code" value="${country}">
-      //       <input name="language_code" value="${language}">
-      //     </form>
-      //   `;
-      //   document.body.insertAdjacentHTML("beforeend", formHtml);
-      //   document.getElementById(formId).submit();
-      // }
-      // updateLocalization({country: "CA", language: "fr"});
+      function updateLocalization({country, language}) {
+        const formId = crypto.randomUUID();
+        const formHtml = `
+          <form id="${formId}" action="/localization" method="POST" hidden>
+            <input name="_method" value="PUT">
+            <input name="country_code" value="${country}">
+            <input name="language_code" value="${language}">
+          </form>
+        `;
+        document.body.insertAdjacentHTML("beforeend", formHtml);
+        document.getElementById(formId).submit();
+      }
+      if(window.Shopify.country == 'ES') {
+        updateLocalization({country: "ES", language: "es"});
+      }
+      
       
     </script>
     {%- if settings.predictive_search_enabled -%}
