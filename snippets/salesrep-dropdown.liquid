@@ -2,7 +2,7 @@
 {% assign attribute = 'Sales Representative' %}
 <p id="sales_representative_title"><label for="sales_representative_id">Who helped you?</label></p>
 
-<select id="sales_representative_id" name="attributes[{{ attribute }}]" required="required">
+<select id="sales_representative_id" name="attributes[{{ attribute }}]">
   {% for i in (1..3) %}
     {% capture option %}{% cycle "", "No Sales Rep", "John" %}{% endcapture %}
     <option value="{{ option }}"{% if cart.attributes[attribute] == option %} selected="selected"{% endif %}>{{ option }}</option>
