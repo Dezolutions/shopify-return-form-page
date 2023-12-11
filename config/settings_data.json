@@ -202,6 +202,12 @@
           "style_colors_cta_button": "#000000",
           "style_colors_text": "#000000"
         }
+      },
+      "18423266570658624584": {
+        "type": "shopify:\/\/apps\/best-currency-converter\/blocks\/doubly\/267afa86-a419-4d5b-a61b-556038e7294d",
+        "disabled": true,
+        "settings": {
+        }
       }
     },
     "color_schemes": {
