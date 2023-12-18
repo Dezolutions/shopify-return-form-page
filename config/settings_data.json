@@ -220,6 +220,13 @@
         "disabled": false,
         "settings": {
         }
+      },
+      "5419952609722095102": {
+        "type": "shopify:\/\/apps\/gift-box\/blocks\/head\/f53ea332-e066-453a-9116-800349284dfb",
+        "disabled": false,
+        "settings": {
+          "script_load_mode": "async"
+        }
       }
     },
     "color_schemes": {
