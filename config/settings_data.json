@@ -208,6 +208,18 @@
         "disabled": true,
         "settings": {
         }
+      },
+      "968056214111506600": {
+        "type": "shopify:\/\/apps\/bss-b2b-portal-quote-net-30\/blocks\/config-header\/0c13e75b-92f5-4200-98c1-50c1fdb201bc",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "831544269915016600": {
+        "type": "shopify:\/\/apps\/bss-b2b-portal-quote-net-30\/blocks\/bss-bcp-js\/0c13e75b-92f5-4200-98c1-50c1fdb201bc",
+        "disabled": false,
+        "settings": {
+        }
       }
     },
     "color_schemes": {
