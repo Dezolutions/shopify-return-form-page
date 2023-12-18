@@ -155,6 +155,7 @@
               "
             >
               {%- for product in collection.products -%}
+{% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
