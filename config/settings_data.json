@@ -215,12 +215,6 @@
         "settings": {
         }
       },
-      "831544269915016600": {
-        "type": "shopify:\/\/apps\/bss-b2b-portal-quote-net-30\/blocks\/bss-bcp-js\/0c13e75b-92f5-4200-98c1-50c1fdb201bc",
-        "disabled": false,
-        "settings": {
-        }
-      },
       "5419952609722095102": {
         "type": "shopify:\/\/apps\/gift-box\/blocks\/head\/f53ea332-e066-453a-9116-800349284dfb",
         "disabled": false,
@@ -234,10 +228,24 @@
         "settings": {
           "button_color": "#000000",
           "button_icon": "chat_bubble",
+          "button_text": "chat_with_us",
           "button_horizontal_position": "bottom_right",
           "button_vertical_position": "lowest",
-          "button_text": "chat_with_us",
           "greeting_message": "👋 Hi, message us with any questions. We're happy to help!"
+        }
+      },
+      "1768834845299682660": {
+        "type": "shopify:\/\/apps\/subscriptions\/blocks\/app-embed-block\/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
+        "disabled": false,
+        "settings": {
+          "color_text_title": "#6D7175",
+          "color_text_body": "#6D7175",
+          "dividers_color": "#8F8D8D",
+          "bacgkround_color": "#FFFFFF",
+          "border_thickness": 1,
+          "border_radius": 0,
+          "supporting_text_title": "Purchase options",
+          "subscription_policy_url": ""
         }
       }
     },
