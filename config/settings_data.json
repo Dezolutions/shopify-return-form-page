@@ -247,6 +247,12 @@
           "supporting_text_title": "Purchase options",
           "subscription_policy_url": ""
         }
+      },
+      "bss-b2b-b80bf852447f": {
+        "type": "shopify:\/\/apps\/bss-b2b-wholesale-solution\/blocks\/config-header\/451233f2-9631-4c49-8b6f-057e4ebcde7f",
+        "disabled": false,
+        "settings": {
+        }
       }
     },
     "color_schemes": {
