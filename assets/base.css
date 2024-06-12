@@ -1,5 +1,6 @@
 .gf-Checkbox {
   width: 40px !important;
+  flex: 0 0 40px !important;
 }
 
 :root {
