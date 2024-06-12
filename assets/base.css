@@ -3,6 +3,10 @@
   flex: 0 0 40px !important;
 }
 
+.gf-option-block ul li button.checked .gf-Checkbox !important {
+  background: #E72C8B;
+}
+
 :root {
   --alpha-button-background: 1;
   --alpha-button-border: 1;
