@@ -1,6 +1,6 @@
 
-.checked .gf-Checkbox !important {
-  background: #E72C8B;
+.checked .gf-Checkbox {
+  background: #E72C8B !important;
 }
 
 :root {
