@@ -209,12 +209,6 @@
         "settings": {
         }
       },
-      "968056214111506600": {
-        "type": "shopify:\/\/apps\/bss-b2b-portal-quote-net-30\/blocks\/config-header\/0c13e75b-92f5-4200-98c1-50c1fdb201bc",
-        "disabled": false,
-        "settings": {
-        }
-      },
       "5419952609722095102": {
         "type": "shopify:\/\/apps\/gift-box\/blocks\/head\/f53ea332-e066-453a-9116-800349284dfb",
         "disabled": false,
@@ -248,16 +242,26 @@
           "subscription_policy_url": ""
         }
       },
-      "bss-b2b-b80bf852447f": {
-        "type": "shopify:\/\/apps\/bss-b2b-wholesale-solution\/blocks\/config-header\/451233f2-9631-4c49-8b6f-057e4ebcde7f",
-        "disabled": false,
-        "settings": {
-        }
-      },
       "316487575649303945": {
         "type": "shopify:\/\/apps\/easify-options\/blocks\/app-embed-block\/d2288b18-c1ba-42f5-b3b3-26c75c8820bf",
         "disabled": false,
         "settings": {
+        }
+      },
+      "5059203847231188605": {
+        "type": "shopify:\/\/apps\/smart-product-filter-search\/blocks\/app-embed\/5cc1944c-3014-4a2a-af40-7d65abc0ef73",
+        "disabled": false,
+        "settings": {
+          "productGridSelector": "",
+          "useCustomQuickviewTemplate": false,
+          "customJs": "",
+          "customCss": "",
+          "customProductTemplateLoader": "{%- capture productTemplate -%}{% render 'globo.filter.product', themeTranslation: shop.metafields.globoFilter.themeTranslation.value[request.locale.iso_code] %}{%- endcapture -%}{%- unless productTemplate contains 'Liquid error' -%}<script id=\"gspfProduct\" type=\"template\/html\">{{- productTemplate | replace: \"script>\", \"scripttag>\" -}}<\/script>{%- endunless -%}",
+          "customTreeTemplateLoader": "{%- capture treeTemplate -%}{% render 'globo.filter.tree' %}{%- endcapture -%}{%- unless treeTemplate contains 'Liquid error' -%}<script id=\"gspfFilterTree\" type=\"template\/html\">{{- treeTemplate | replace: \"script>\", \"scripttag>\" -}}<\/script>{%- endunless -%}",
+          "customSortTemplateLoader": "{%- capture sortTemplate -%}{% render 'globo.filter.sort' %}{%- endcapture -%}{%- unless sortTemplate contains 'Liquid error' -%}<script id=\"gspfFilterSort\" type=\"template\/html\">{{- sortTemplate | replace: \"script>\", \"scripttag>\" -}}<\/script>{%- endunless -%}",
+          "customSearchTemplateLoader": "{%- capture searchTemplate -%}{% render 'globo.filter.search' %}{%- endcapture -%}{%- unless searchTemplate contains 'Liquid error' -%}<script id=\"gspfSearchResult\" type=\"template\/html\">{{- searchTemplate | replace: \"script>\", \"scripttag>\" -}}<\/script>{%- endunless -%}",
+          "customPaginationTemplateLoader": "{%- capture paginationTemplate -%}{% render 'globo.filter.pagination' %}{%- endcapture -%}{%- unless paginationTemplate contains 'Liquid error' -%}<script id=\"gspfPagination\" type=\"template\/html\">{{- paginationTemplate | replace: \"script>\", \"scripttag>\" -}}<\/script>{%- endunless -%}",
+          "customYMMTemplateLoader": "{%- capture YMMTemplate -%}{% render 'globo.filter.form' %}{%- endcapture -%}{%- unless YMMTemplate contains 'Liquid error' -%}<script id=\"gspfForm\" type=\"template\/html\">{{- YMMTemplate | replace: \"script>\", \"scripttag>\" -}}<\/script>{%- endunless -%}"
         }
       }
     },
