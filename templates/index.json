@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "c180d2a8-39c2-40aa-ad05-f4bcc06c5046": {
@@ -368,6 +377,48 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "rich_text_FXMQHM": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_9EQGHJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_T9G9LR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "button_yVkVHg": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_9EQGHJ",
+        "text_T9G9LR",
+        "button_yVkVHg"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -378,6 +429,7 @@
     "0e072ce1-66a3-4dae-adf3-f2c1f2042243",
     "acf644b6-1304-4feb-a793-80369a52dae5",
     "90cc1a96-629f-404f-9d4d-b3429b2a1aeb",
-    "169835799793f6b053"
+    "169835799793f6b053",
+    "rich_text_FXMQHM"
   ]
 }
