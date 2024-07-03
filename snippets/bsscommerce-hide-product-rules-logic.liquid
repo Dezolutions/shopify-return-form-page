@@ -4,6 +4,7 @@
 {% assign bss_hide_product_on_pages = "" %}
 {% assign bss_login_to_day_date = 'now' | date: '%s' %}
 {% assign bss_product_collection = "" | split: ',' %}
+
 {% for collection in product.collections %}
     {% assign collection_id = collection.id | split:',' %}
     {% assign delimeter = "|" | split:',' %}
@@ -14,7 +15,7 @@
     {% assign collection_id_custom = collec_id_custom | split: ',' %}
     {% assign bss_product_collection = bss_product_collection | concat: collection_id_custom %}
 {% endif %}
-{% unless content_for_header contains "Shopify.designMode" or content_for_header contains "previewBarInjector.init()" %}
+{% unless request.design_mode or request.visual_preview_mode %}
     
 {% endunless %}
 {{ bss_product_is_hide }}

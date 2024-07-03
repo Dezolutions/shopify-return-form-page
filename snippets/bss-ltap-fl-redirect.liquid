@@ -1,6 +1,6 @@
 <script id="bss-ltap-fl-redirect" type="text/javascript">
-const skipDomains = ['minimo-skin-essentials-wholesale.myshopify.com'];
-function runInLoginPage() {
+  const skipDomains = ['minimo-skin-essentials-wholesale.myshopify.com'];
+  function runInLoginPage() {
   function insertElement(id) {
     const BSS = JSON.parse(localStorage.getItem("BSS")) || "";
     let createCustomer = document.getElementById(id);
@@ -14,9 +14,9 @@ function runInLoginPage() {
   }
 
   insertElement("customer_login");
-}
+  }
 
-function runInRegisterPage() {
+  function runInRegisterPage() {
   if(skipDomains.includes(window.Shopify.shop)) {
     return;
   }
@@ -94,14 +94,20 @@ function runInRegisterPage() {
       return regex.test(email);
     }
   }
-}
+  }
 
-if (window.location.pathname.includes("/account/login")) {
-  runInLoginPage();
-}
+  if (window.location.pathname.includes("/account/login")) {
+    if (window.Shopify.shop === "protegisparts.myshopify.com") { 
+      setTimeout(() => {
+        runInLoginPage();
+      }, 3000)
+    } else {
+      runInLoginPage();    
+    }
+  }
 
 
-if (window.location.pathname === "/account/register") {
+  if (window.location.pathname === "/account/register") {
   runInRegisterPage();
-}
+  }
 </script>

@@ -10,7 +10,7 @@
     {% assign bss_product_collection = bss_product_collection | concat:delimeter %}
     {% assign bss_product_collection = bss_product_collection | concat:collection_id %}
 {% endfor %}
-{% unless content_for_header contains "Shopify.designMode" or content_for_header contains "previewBarInjector.init()" %}
+{% unless request.design_mode or request.visual_preview_mode %}
     
 {% endunless %}
 {% if bss_product_is_hide == true or bss_product_is_hide contains "true" %}
