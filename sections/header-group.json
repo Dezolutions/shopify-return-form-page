@@ -57,11 +57,52 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "1720083099f2c7c495": {
+      "type": "apps",
+      "blocks": {
+        "surecust_register_6KcW9y": {
+          "type": "shopify:\/\/apps\/surecust\/blocks\/register\/11b1d95b-f9a2-49ad-9a53-3d6a172a070d",
+          "settings": {
+            "title": "Create account",
+            "subtitle": "Complete your profile by filling in this form.",
+            "labels_show": true,
+            "first_name": "First Name",
+            "first_name_place": "First Name",
+            "firstnameerror": "First Name is required",
+            "first_name_required": false,
+            "last_name": "Last Name",
+            "last_name_place": "Last Name",
+            "lastnameerror": "Last Name is required",
+            "last_name_required": false,
+            "email_label": "Email *",
+            "email_place": "Email *",
+            "emailreq": "Email is required",
+            "emailvalid": "Please enter valid email address",
+            "emailalready": "Email is already registered",
+            "password_label": "Password *",
+            "password_place": "Password *",
+            "password": "Password field is required",
+            "button_label": "Create",
+            "singin_label": "Sign in",
+            "singin_url": "",
+            "signin_disble": false,
+            "success": "Your application is successfully submitted, we will check and send you activation email soon."
+          }
+        }
+      },
+      "block_order": [
+        "surecust_register_6KcW9y"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "announcement-bar",
     "header",
-    "custom_liquid_pDFVBV"
+    "custom_liquid_pDFVBV",
+    "1720083099f2c7c495"
   ]
 }
