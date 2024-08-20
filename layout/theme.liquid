@@ -1,6 +1,14 @@
+
+{% comment %}BSS B2B Login{% endcomment %}
+{% capture bsscommerce_login_require_template %}{% include 'bsscommerce_login_require' %}{% endcapture %}{% unless bsscommerce_login_require_template contains "Liquid error" %}{{ bsscommerce_login_require_template }}{% endunless %}
+{% comment %}BSS B2B Login{% endcomment %}
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
+{% comment %}BSS B2B Login{% endcomment %}
+{{ 'tiny.content.min.css' | asset_url | stylesheet_tag }}
+{% comment %}BSS B2B Login{% endcomment %}
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -290,7 +298,11 @@
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
-    </main>
+    
+{% comment %}BSS B2B Login{% endcomment %}
+{% capture bsscommerce_passcode_to_see_price_product_custom %}{% render 'bss-passcode-to-see-price-js.liquid' %}{% endcapture %}{% unless bsscommerce_passcode_to_see_price_product_custom contains "Liquid error" %}{% render 'bss-passcode-to-see-price-js.liquid' %}{% endunless %}{% capture bsscommerce_login_to_see_price_product_custom %}{% render 'bsscommerce-login-to-see-price-custom-js.liquid' %}{% endcapture %}{% unless bsscommerce_login_to_see_price_product_custom contains "Liquid error" %}{% render 'bsscommerce-login-to-see-price-custom-js.liquid' %}{% endunless %}{% capture bss_ltap_fl_redirect %}{% render 'bss-ltap-fl-redirect.liquid' %}{% endcapture %}{% unless bss_ltap_fl_redirect contains "Liquid error" %}{% render 'bss-ltap-fl-redirect.liquid' %}{% endunless %}
+{% comment %}BSS B2B Login{% endcomment %}
+</main>
 
     {% sections 'footer-group' %}
 
