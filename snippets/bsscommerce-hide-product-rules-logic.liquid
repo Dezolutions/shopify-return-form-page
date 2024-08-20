@@ -1,3 +1,11 @@
+{%- comment %}
+    Author: BSS B2B Login
+
+    DO NOT MODIFY. The contents of BSS B2B Login 
+    will overwrite any changes in the next update.
+
+    Updated at: Tue Aug 20 2024
+{% endcomment -%}
 {% assign bss_product_is_hide = false %}
 {% assign bss_hide_product_redirect_page = "/" %}
 {% assign bss_hide_product_redirect_type = 0 %}
@@ -18,4 +26,6 @@
 {% unless request.design_mode or request.visual_preview_mode %}
     
 {% endunless %}
-{{ bss_product_is_hide }}
+{% unless no_data_returned %}
+    {{ bss_product_is_hide }}
+  {% endunless %}
