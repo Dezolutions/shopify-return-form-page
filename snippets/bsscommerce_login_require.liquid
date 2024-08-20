@@ -1,3 +1,11 @@
+{%- comment %}
+    Author: BSS B2B Login
+
+    DO NOT MODIFY. The contents of BSS B2B Login 
+    will overwrite any changes in the next update.
+
+    Updated at: Tue Aug 20 2024
+{% endcomment -%}
 {%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
 {%- assign page_url = contentForQuerystring | split:'"pageurl":"' | last | split:'"' | first | split:'.myshopify.com' | last |   replace:'\\/','/' |    replace:'%20',' ' |    replace:'\u0026','&' | replace:'\/', '/'  -%}
 {% assign page_url =  "https://" | append: page_url  %}
@@ -79,5 +87,10 @@
         {% endcapture %}
     {% endif %}
 {% endunless %}
+
+{% include 'bsscommerce-hide-product-rules-logic', no_data_returned: true %}
+{% if enable_noindex %}
+    <meta name="robots" content="noindex">
+{% endif %}
 
 {% include "bss-ltap-disable-registration-page" %}

@@ -40,6 +40,7 @@
     email: {{ customer.email | json }},
     first_name: {{ customer.first_name | json }},
     last_name: {{ customer.last_name | json }},
+    orders: {{customer.orders.size | json }}
   };
   {% for collection in product.collections %}
   AIR_REVIEWS.collections.push(`{{ collection.id | replace: "$", "\$" }}`);
@@ -49,7 +50,7 @@
   AIR_REVIEWS.appBlock = {{ airReviewsAppBlock }};
   AIR_REVIEWS.shopData = {{ shop.metafields.air_reviews_shop.data | default: false }};
   AIR_REVIEWS.settings = {{ shop.metafields.air_reviews_settings.data | default: false }};
-  AIR_REVIEWS.hasStorefrontToken = {{ shop.metafields.air_reviews_has_storefront_token.data | false }};
+  AIR_REVIEWS.hasStorefrontToken = {{ shop.metafields.air_reviews_has_storefront_token.data | default: false }};
   AIR_REVIEWS.translations = {{ shop.metafields.air_reviews_translation.data | default: false }};
   AIR_REVIEWS.productReview = {{ product.metafields.air_reviews_product.data | default: false }};
   AIR_REVIEWS.shopLogo = {{ shop.brand.logo | json }};
