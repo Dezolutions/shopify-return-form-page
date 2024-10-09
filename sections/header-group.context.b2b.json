@@ -8,7 +8,7 @@
 * ------------------------------------------------------------
 */
 {
-  "parent": "footer-group.json",
+  "parent": "header-group.json",
   "context": {
     "b2b": true
   },
