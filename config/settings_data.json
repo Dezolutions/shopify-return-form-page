@@ -179,7 +179,7 @@
       },
       "1613637625103495938": {
         "type": "shopify://apps/cart-free-product/blocks/cart-free-product/ed88d736-8ba0-4b46-9659-85077ad18e98",
-        "disabled": false,
+        "disabled": true,
         "settings": {
           "cart_items_section_name": ""
         }
